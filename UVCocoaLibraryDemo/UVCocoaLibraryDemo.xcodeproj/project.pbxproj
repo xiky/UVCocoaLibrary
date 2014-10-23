@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99C8F95B192B43F4007EFFC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8F95A192B43F4007EFFC1 /* libsqlite3.dylib */; };
+		99F341A419249D8500AA83D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341A319249D8500AA83D7 /* Foundation.framework */; };
+		99F341A619249D8500AA83D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341A519249D8500AA83D7 /* CoreGraphics.framework */; };
+		99F341A819249D8500AA83D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341A719249D8500AA83D7 /* UIKit.framework */; };
+		99F341AE19249D8500AA83D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99F341AC19249D8500AA83D7 /* InfoPlist.strings */; };
+		99F341B019249D8500AA83D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F341AF19249D8500AA83D7 /* main.m */; };
+		99F341B419249D8500AA83D7 /* UVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F341B319249D8500AA83D7 /* UVAppDelegate.m */; };
+		99F341B719249D8500AA83D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F341B519249D8500AA83D7 /* Main.storyboard */; };
+		99F341BA19249D8500AA83D7 /* UVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F341B919249D8500AA83D7 /* UVViewController.m */; };
+		99F341BC19249D8500AA83D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F341BB19249D8500AA83D7 /* Images.xcassets */; };
+		99F341C319249D8500AA83D7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341C219249D8500AA83D7 /* XCTest.framework */; };
+		99F341C419249D8500AA83D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341A319249D8500AA83D7 /* Foundation.framework */; };
+		99F341C519249D8500AA83D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341A719249D8500AA83D7 /* UIKit.framework */; };
+		99F341CD19249D8500AA83D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99F341CB19249D8500AA83D7 /* InfoPlist.strings */; };
+		99F341CF19249D8500AA83D7 /* UVCocoaLibraryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F341CE19249D8500AA83D7 /* UVCocoaLibraryDemoTests.m */; };
+		99F341D91924A2D600AA83D7 /* libUVCocoaLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341D81924A2D600AA83D7 /* libUVCocoaLibrary.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99F341C619249D8500AA83D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99F3419819249D8500AA83D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99F3419F19249D8500AA83D7;
+			remoteInfo = UVCocoaLibraryDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		99C8F95A192B43F4007EFFC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		99F341A019249D8500AA83D7 /* UVCocoaLibraryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UVCocoaLibraryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F341A319249D8500AA83D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99F341A519249D8500AA83D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		99F341A719249D8500AA83D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		99F341AB19249D8500AA83D7 /* UVCocoaLibraryDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UVCocoaLibraryDemo-Info.plist"; sourceTree = "<group>"; };
+		99F341AD19249D8500AA83D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99F341AF19249D8500AA83D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99F341B119249D8500AA83D7 /* UVCocoaLibraryDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UVCocoaLibraryDemo-Prefix.pch"; sourceTree = "<group>"; };
+		99F341B219249D8500AA83D7 /* UVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UVAppDelegate.h; sourceTree = "<group>"; };
+		99F341B319249D8500AA83D7 /* UVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UVAppDelegate.m; sourceTree = "<group>"; };
+		99F341B619249D8500AA83D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		99F341B819249D8500AA83D7 /* UVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UVViewController.h; sourceTree = "<group>"; };
+		99F341B919249D8500AA83D7 /* UVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UVViewController.m; sourceTree = "<group>"; };
+		99F341BB19249D8500AA83D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99F341C119249D8500AA83D7 /* UVCocoaLibraryDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UVCocoaLibraryDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F341C219249D8500AA83D7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		99F341CA19249D8500AA83D7 /* UVCocoaLibraryDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UVCocoaLibraryDemoTests-Info.plist"; sourceTree = "<group>"; };
+		99F341CC19249D8500AA83D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99F341CE19249D8500AA83D7 /* UVCocoaLibraryDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UVCocoaLibraryDemoTests.m; sourceTree = "<group>"; };
+		99F341D81924A2D600AA83D7 /* libUVCocoaLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUVCocoaLibrary.a; path = "../build/Debug-iphoneos/libUVCocoaLibrary.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99F3419D19249D8500AA83D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99C8F95B192B43F4007EFFC1 /* libsqlite3.dylib in Frameworks */,
+				99F341D91924A2D600AA83D7 /* libUVCocoaLibrary.a in Frameworks */,
+				99F341A619249D8500AA83D7 /* CoreGraphics.framework in Frameworks */,
+				99F341A819249D8500AA83D7 /* UIKit.framework in Frameworks */,
+				99F341A419249D8500AA83D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F341BE19249D8500AA83D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F341C319249D8500AA83D7 /* XCTest.framework in Frameworks */,
+				99F341C519249D8500AA83D7 /* UIKit.framework in Frameworks */,
+				99F341C419249D8500AA83D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99F3419719249D8500AA83D7 = {
+			isa = PBXGroup;
+			children = (
+				99F341A919249D8500AA83D7 /* UVCocoaLibraryDemo */,
+				99F341C819249D8500AA83D7 /* UVCocoaLibraryDemoTests */,
+				99F341A219249D8500AA83D7 /* Frameworks */,
+				99F341A119249D8500AA83D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99F341A119249D8500AA83D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F341A019249D8500AA83D7 /* UVCocoaLibraryDemo.app */,
+				99F341C119249D8500AA83D7 /* UVCocoaLibraryDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99F341A219249D8500AA83D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99C8F95A192B43F4007EFFC1 /* libsqlite3.dylib */,
+				99F341D81924A2D600AA83D7 /* libUVCocoaLibrary.a */,
+				99F341A319249D8500AA83D7 /* Foundation.framework */,
+				99F341A519249D8500AA83D7 /* CoreGraphics.framework */,
+				99F341A719249D8500AA83D7 /* UIKit.framework */,
+				99F341C219249D8500AA83D7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99F341A919249D8500AA83D7 /* UVCocoaLibraryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				99F341B219249D8500AA83D7 /* UVAppDelegate.h */,
+				99F341B319249D8500AA83D7 /* UVAppDelegate.m */,
+				99F341B519249D8500AA83D7 /* Main.storyboard */,
+				99F341B819249D8500AA83D7 /* UVViewController.h */,
+				99F341B919249D8500AA83D7 /* UVViewController.m */,
+				99F341BB19249D8500AA83D7 /* Images.xcassets */,
+				99F341AA19249D8500AA83D7 /* Supporting Files */,
+			);
+			path = UVCocoaLibraryDemo;
+			sourceTree = "<group>";
+		};
+		99F341AA19249D8500AA83D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99F341AB19249D8500AA83D7 /* UVCocoaLibraryDemo-Info.plist */,
+				99F341AC19249D8500AA83D7 /* InfoPlist.strings */,
+				99F341AF19249D8500AA83D7 /* main.m */,
+				99F341B119249D8500AA83D7 /* UVCocoaLibraryDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99F341C819249D8500AA83D7 /* UVCocoaLibraryDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				99F341CE19249D8500AA83D7 /* UVCocoaLibraryDemoTests.m */,
+				99F341C919249D8500AA83D7 /* Supporting Files */,
+			);
+			path = UVCocoaLibraryDemoTests;
+			sourceTree = "<group>";
+		};
+		99F341C919249D8500AA83D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99F341CA19249D8500AA83D7 /* UVCocoaLibraryDemoTests-Info.plist */,
+				99F341CB19249D8500AA83D7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99F3419F19249D8500AA83D7 /* UVCocoaLibraryDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F341D219249D8500AA83D7 /* Build configuration list for PBXNativeTarget "UVCocoaLibraryDemo" */;
+			buildPhases = (
+				99F3419C19249D8500AA83D7 /* Sources */,
+				99F3419D19249D8500AA83D7 /* Frameworks */,
+				99F3419E19249D8500AA83D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UVCocoaLibraryDemo;
+			productName = UVCocoaLibraryDemo;
+			productReference = 99F341A019249D8500AA83D7 /* UVCocoaLibraryDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		99F341C019249D8500AA83D7 /* UVCocoaLibraryDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F341D519249D8500AA83D7 /* Build configuration list for PBXNativeTarget "UVCocoaLibraryDemoTests" */;
+			buildPhases = (
+				99F341BD19249D8500AA83D7 /* Sources */,
+				99F341BE19249D8500AA83D7 /* Frameworks */,
+				99F341BF19249D8500AA83D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99F341C719249D8500AA83D7 /* PBXTargetDependency */,
+			);
+			name = UVCocoaLibraryDemoTests;
+			productName = UVCocoaLibraryDemoTests;
+			productReference = 99F341C119249D8500AA83D7 /* UVCocoaLibraryDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99F3419819249D8500AA83D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = UV;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Uniview;
+				TargetAttributes = {
+					99F341C019249D8500AA83D7 = {
+						TestTargetID = 99F3419F19249D8500AA83D7;
+					};
+				};
+			};
+			buildConfigurationList = 99F3419B19249D8500AA83D7 /* Build configuration list for PBXProject "UVCocoaLibraryDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 99F3419719249D8500AA83D7;
+			productRefGroup = 99F341A119249D8500AA83D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99F3419F19249D8500AA83D7 /* UVCocoaLibraryDemo */,
+				99F341C019249D8500AA83D7 /* UVCocoaLibraryDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99F3419E19249D8500AA83D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F341BC19249D8500AA83D7 /* Images.xcassets in Resources */,
+				99F341AE19249D8500AA83D7 /* InfoPlist.strings in Resources */,
+				99F341B719249D8500AA83D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F341BF19249D8500AA83D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F341CD19249D8500AA83D7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99F3419C19249D8500AA83D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F341B019249D8500AA83D7 /* main.m in Sources */,
+				99F341BA19249D8500AA83D7 /* UVViewController.m in Sources */,
+				99F341B419249D8500AA83D7 /* UVAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F341BD19249D8500AA83D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F341CF19249D8500AA83D7 /* UVCocoaLibraryDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99F341C719249D8500AA83D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99F3419F19249D8500AA83D7 /* UVCocoaLibraryDemo */;
+			targetProxy = 99F341C619249D8500AA83D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		99F341AC19249D8500AA83D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99F341AD19249D8500AA83D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		99F341B519249D8500AA83D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99F341B619249D8500AA83D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		99F341CB19249D8500AA83D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99F341CC19249D8500AA83D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99F341D019249D8500AA83D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		99F341D119249D8500AA83D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99F341D319249D8500AA83D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../UVCocoaLibrary",
+					"$(SRCROOT)/../ThridLibrary/**",
+					"$(SRCROOT)/../Database",
+					"$(SRCROOT)/../Utils",
+					"$(SRCROOT)/../Model",
+					"$(SRCROOT)/../Widget",
+					"$(SRCROOT)/../Request",
+					"$(SRCROOT)/../Include",
+					"$(SRCROOT)/../Media",
+					"$(SRCROOT)/../Category",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		99F341D419249D8500AA83D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../UVCocoaLibrary",
+					"$(SRCROOT)/../ThridLibrary/**",
+					"$(SRCROOT)/../Database",
+					"$(SRCROOT)/../Utils",
+					"$(SRCROOT)/../Model",
+					"$(SRCROOT)/../Widget",
+					"$(SRCROOT)/../Request",
+					"$(SRCROOT)/../Include",
+					"$(SRCROOT)/../Media",
+					"$(SRCROOT)/../Category",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		99F341D619249D8500AA83D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVCocoaLibraryDemo.app/UVCocoaLibraryDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UVCocoaLibraryDemoTests/UVCocoaLibraryDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		99F341D719249D8500AA83D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVCocoaLibraryDemo.app/UVCocoaLibraryDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVCocoaLibraryDemo/UVCocoaLibraryDemo-Prefix.pch";
+				INFOPLIST_FILE = "UVCocoaLibraryDemoTests/UVCocoaLibraryDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99F3419B19249D8500AA83D7 /* Build configuration list for PBXProject "UVCocoaLibraryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F341D019249D8500AA83D7 /* Debug */,
+				99F341D119249D8500AA83D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F341D219249D8500AA83D7 /* Build configuration list for PBXNativeTarget "UVCocoaLibraryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F341D319249D8500AA83D7 /* Debug */,
+				99F341D419249D8500AA83D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F341D519249D8500AA83D7 /* Build configuration list for PBXNativeTarget "UVCocoaLibraryDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F341D619249D8500AA83D7 /* Debug */,
+				99F341D719249D8500AA83D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99F3419819249D8500AA83D7 /* Project object */;
+}
