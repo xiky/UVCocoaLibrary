@@ -11,9 +11,9 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>163811A2-0585-4A84-8866-7B63179847EF</key>
-		<string>http://192.168.22.10/svn/airimos/branches/UVCocoaLibrary</string>
-		<key>1e84eb20-7d43-40d5-8958-acade31f75f6++5146</key>
-		<string>https://code.uniview.biz/svn/wowcam/trunk/ios/UVCocoaLibrary</string>
+		<string>http://192.168.22.10/svn/airimos</string>
+		<key>C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B</key>
+		<string>https://code.uniview.biz/svn/wowcam</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>UVCocoaLibrary.xcworkspace</string>
@@ -21,22 +21,13 @@
 	<dict>
 		<key>163811A2-0585-4A84-8866-7B63179847EF</key>
 		<string>../../br_AirimosIphoneAirPlay</string>
-		<key>1e84eb20-7d43-40d5-8958-acade31f75f6++5146</key>
+		<key>C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B</key>
 		<string>..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>163811A2-0585-4A84-8866-7B63179847EF</key>
-		<string>http://192.168.22.10/svn/airimos</string>
-		<key>1e84eb20-7d43-40d5-8958-acade31f75f6++5146</key>
-		<string>https://code.uniview.biz/svn/wowcam</string>
-	</dict>
-	<key>IDESourceControlProjectURL</key>
-	<string>https://code.uniview.biz/svn/wowcam/trunk/ios/UVCocoaLibrary/UVCocoaLibrary.xcworkspace</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1e84eb20-7d43-40d5-8958-acade31f75f6++5146</string>
+	<string>C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -57,7 +48,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1e84eb20-7d43-40d5-8958-acade31f75f6++5146</string>
+			<string>C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>UVCocoaLibrary</string>
 		</dict>

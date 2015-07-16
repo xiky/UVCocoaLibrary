@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *text;
 @property (weak, nonatomic) IBOutlet UVMenuButton *btnMenu;
 
+- (IBAction)onLogSender:(id)sender;
 - (IBAction)onClickSender:(id)sender;
+- (IBAction)onCaskSender:(id)sender;
 @end

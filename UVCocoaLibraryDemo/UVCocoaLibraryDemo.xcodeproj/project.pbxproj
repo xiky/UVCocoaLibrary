@@ -206,7 +206,7 @@
 			attributes = {
 				CLASSPREFIX = UV;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = Uniview;
+				ORGANIZATIONNAME = Chenjiaxin;
 				TargetAttributes = {
 					99F341C019249D8500AA83D7 = {
 						TestTargetID = 99F3419F19249D8500AA83D7;

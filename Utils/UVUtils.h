@@ -35,4 +35,5 @@
  @return NSString 返回加密后的32位md5密文
  */
 + (NSString *) md5passwd: (NSString *) passwd;
++ (NSString*) sha256passwd:(NSString*)passwd;
 @end

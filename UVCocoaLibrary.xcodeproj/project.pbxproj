@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D11B5739D600A96FDC /* UVDevice.m */; };
+		814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D31B5739D600A96FDC /* UVLogger.m */; };
 		991FA95C18CEB551007024CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA95B18CEB551007024CB /* Foundation.framework */; };
 		991FA96A18CEB551007024CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA96918CEB551007024CB /* XCTest.framework */; };
 		991FA96B18CEB551007024CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA95B18CEB551007024CB /* Foundation.framework */; };
@@ -52,7 +54,6 @@
 		99C8F984192B4F00007EFFC1 /* UVIdEntity.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F963192B4667007EFFC1 /* UVIdEntity.h */; };
 		99C8F985192B4F00007EFFC1 /* UVTables.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F965192B4667007EFFC1 /* UVTables.h */; };
 		99C8F986192B4F00007EFFC1 /* UVConest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F968192B4667007EFFC1 /* UVConest.h */; };
-		99C8F987192B4F00007EFFC1 /* UVLog.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F969192B4667007EFFC1 /* UVLog.h */; };
 		99C8F988192B4F00007EFFC1 /* UVAudio.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F96B192B4667007EFFC1 /* UVAudio.h */; };
 		99C8F989192B4F00007EFFC1 /* UVError.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F96E192B4667007EFFC1 /* UVError.h */; };
 		99C8F98A192B4F00007EFFC1 /* UVHttpClient.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F971192B4667007EFFC1 /* UVHttpClient.h */; };
@@ -113,7 +114,6 @@
 				99C8F984192B4F00007EFFC1 /* UVIdEntity.h in Copy Files */,
 				99C8F985192B4F00007EFFC1 /* UVTables.h in Copy Files */,
 				99C8F986192B4F00007EFFC1 /* UVConest.h in Copy Files */,
-				99C8F987192B4F00007EFFC1 /* UVLog.h in Copy Files */,
 				99C8F988192B4F00007EFFC1 /* UVAudio.h in Copy Files */,
 				99C8F989192B4F00007EFFC1 /* UVError.h in Copy Files */,
 				99C8F98A192B4F00007EFFC1 /* UVHttpClient.h in Copy Files */,
@@ -147,6 +147,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		814FD2D01B5739D600A96FDC /* UVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVDevice.h; sourceTree = "<group>"; };
+		814FD2D11B5739D600A96FDC /* UVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVDevice.m; sourceTree = "<group>"; };
+		814FD2D21B5739D600A96FDC /* UVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVLogger.h; sourceTree = "<group>"; };
+		814FD2D31B5739D600A96FDC /* UVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVLogger.m; sourceTree = "<group>"; };
 		991FA95818CEB551007024CB /* libUVCocoaLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUVCocoaLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		991FA95B18CEB551007024CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		991FA95F18CEB551007024CB /* UVCocoaLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UVCocoaLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -201,7 +205,6 @@
 		99C8F965192B4667007EFFC1 /* UVTables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVTables.h; sourceTree = "<group>"; };
 		99C8F966192B4667007EFFC1 /* UVTables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVTables.m; sourceTree = "<group>"; };
 		99C8F968192B4667007EFFC1 /* UVConest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVConest.h; sourceTree = "<group>"; };
-		99C8F969192B4667007EFFC1 /* UVLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVLog.h; sourceTree = "<group>"; };
 		99C8F96B192B4667007EFFC1 /* UVAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVAudio.h; sourceTree = "<group>"; };
 		99C8F96C192B4667007EFFC1 /* UVAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVAudio.m; sourceTree = "<group>"; };
 		99C8F96E192B4667007EFFC1 /* UVError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVError.h; sourceTree = "<group>"; };
@@ -417,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				99C8F968192B4667007EFFC1 /* UVConest.h */,
-				99C8F969192B4667007EFFC1 /* UVLog.h */,
 			);
 			path = Include;
 			sourceTree = SOURCE_ROOT;
@@ -458,6 +460,10 @@
 		99C8F977192B4667007EFFC1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				814FD2D01B5739D600A96FDC /* UVDevice.h */,
+				814FD2D11B5739D600A96FDC /* UVDevice.m */,
+				814FD2D21B5739D600A96FDC /* UVLogger.h */,
+				814FD2D31B5739D600A96FDC /* UVLogger.m */,
 				99C8F978192B4667007EFFC1 /* UVUtils.h */,
 				99C8F979192B4667007EFFC1 /* UVUtils.m */,
 			);
@@ -616,6 +622,7 @@
 				99E17A4918CFE69C00BD046E /* iToast.m in Sources */,
 				99C8F97C192B4667007EFFC1 /* UVTables.m in Sources */,
 				99C8F957192B4337007EFFC1 /* UIView+Shake.m in Sources */,
+				814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */,
 				99C8F97A192B4667007EFFC1 /* UVFMDatabase.m in Sources */,
 				99C8F982192B4667007EFFC1 /* UVUtils.m in Sources */,
 				99CDAF95193486A6008AC850 /* WYStoryboardPopoverSegue.m in Sources */,
@@ -624,6 +631,7 @@
 				99E17A4A18CFE69C00BD046E /* MBProgressHUD.m in Sources */,
 				9930E0721949A038000CE95C /* UIButton+Bootstrap.m in Sources */,
 				99E17A4818CFE69C00BD046E /* FMResultSet.m in Sources */,
+				814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */,
 				99E17A4618CFE69C00BD046E /* FMDatabasePool.m in Sources */,
 				99D2ACBA19F49C30006167AC /* UVSoap.m in Sources */,
 				99C8F95F192B4440007EFFC1 /* UVMenuButton.m in Sources */,

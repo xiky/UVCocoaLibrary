@@ -7,7 +7,7 @@
 //
 #pragma mark - Include
 #import "UVConest.h"
-#import "UVLog.h"
+#import "UVLogger.h"
 
 #pragma mark - Model
 #import "UVError.h"
@@ -23,6 +23,7 @@
 
 #pragma mark - Utils
 #import "UVUtils.h"
+#import "UVDevice.h"
 
 #pragma mark - Media
 #import "UVAudio.h"

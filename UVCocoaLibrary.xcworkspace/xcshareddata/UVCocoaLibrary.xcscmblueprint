@@ -1,0 +1,34 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "163811A2-0585-4A84-8866-7B63179847EF" : {
+      "DVTSourceControlWorkingCopyRepositoryBranchesLocationKey" : "branches",
+      "DVTSourceControlWorkingCopyRepositoryTagsLocationKey" : "tags",
+      "DVTSourceControlWorkingCopyRepositoryPrimaryBranchLocationKey" : "trunk"
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B" : 0,
+    "163811A2-0585-4A84-8866-7B63179847EF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AEC0C181-5AD7-49B3-9E8A-C54B3D54B63D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B" : "UVCocoaLibrary",
+    "163811A2-0585-4A84-8866-7B63179847EF" : "br_AirimosIphoneAirPlay"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UVCocoaLibrary",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UVCocoaLibrary.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.22.10\/svn\/airimos",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "163811A2-0585-4A84-8866-7B63179847EF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/code.uniview.biz\/svn\/wowcam",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C45D92EC74EF4E555494C4D9A6E2C4ECA803EB2B"
+    }
+  ]
+}
