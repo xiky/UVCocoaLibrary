@@ -60,4 +60,5 @@
 
 - (UIImage *)tintedImageWithColor:(UIColor *)tintColor;
 - (UIImage *)tintedGradientImageWithColor:(UIColor *)tintColor;
+
 @end

@@ -107,11 +107,12 @@ typedef void (^finishDownListener)(NSError *error);
  
  @param NSURL url_ 请求的地址
  @param NSArray files 格式如 
-    NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<本地文件NSURL1>},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:<本地文件NSURL2>}];
+    NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<文件NSData>},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:<本地文件NSURL2>}];
  @param NSArray params 其它参数
  @param NSError error_ 如果产生错误 这里保存错误信息
  */
 - (id)upload:(NSURL*)url_ files:(NSArray*)files_ param:(NSArray*)params error:(NSError **)error_;
+
 
 /** 下载文件
  下载文件使用异步进行操作，下载过程中可以取消下载

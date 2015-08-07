@@ -67,4 +67,19 @@
         }
     }
 }
+- (void)cleanCache:(NSURL*)url_
+{
+    NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
+    NSString *path = paths[0];
+    path = [path stringByAppendingPathComponent:@"pictures"];
+    NSString *filename = [UVUtils md5passwd:url_.absoluteString];
+    NSString *full = [path stringByAppendingPathComponent:filename];
+    
+    NSFileManager *f = [NSFileManager defaultManager];
+    if([f fileExistsAtPath:path])
+    {
+        NSError *error;
+        [f removeItemAtPath:full error:&error];
+    }
+}
 @end
