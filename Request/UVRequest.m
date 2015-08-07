@@ -66,13 +66,14 @@ static UVRequest *_requestinstance = nil;
         message = @"loading";
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    __weak UVRequest *Self = self;
     dispatch_async(_requestQueue, ^{@autoreleasepool {
         UVError *err = nil;
         __block MBProgressHUD* hub = nil;
         if(view != nil)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                hub = [self showProgress:view message:message];
+                hub = [Self showProgress:view message:message];
             });
         }
         @try {
@@ -93,7 +94,7 @@ static UVRequest *_requestinstance = nil;
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(hub != nil)
                 {
-                    [self hideProgress:hub];
+                    [Self hideProgress:hub];
                     hub = nil;
                 }
                 if(finish_ != nil)
@@ -102,7 +103,7 @@ static UVRequest *_requestinstance = nil;
                 }
                 if(showToast_ && err != nil)
                 {
-                    [self showError:err];
+                    [Self showError:err];
                 }
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             });

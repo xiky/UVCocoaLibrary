@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */; };
+		7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */; };
+		7F6D0D091B7349C400A15571 /* UINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */; };
 		814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D11B5739D600A96FDC /* UVDevice.m */; };
 		814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D31B5739D600A96FDC /* UVLogger.m */; };
 		991FA95C18CEB551007024CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA95B18CEB551007024CB /* Foundation.framework */; };
@@ -147,6 +150,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
+		7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
+		7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
+		7F6D0D071B7349C400A15571 /* UINavigationController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Utils.h"; sourceTree = "<group>"; };
+		7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Utils.m"; sourceTree = "<group>"; };
 		814FD2D01B5739D600A96FDC /* UVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVDevice.h; sourceTree = "<group>"; };
 		814FD2D11B5739D600A96FDC /* UVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVDevice.m; sourceTree = "<group>"; };
 		814FD2D21B5739D600A96FDC /* UVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVLogger.h; sourceTree = "<group>"; };
@@ -388,6 +397,12 @@
 				99C8F94D192B4337007EFFC1 /* UIView+Utils.m */,
 				99C8F94E192B4337007EFFC1 /* UIViewController+Utils.h */,
 				99C8F94F192B4337007EFFC1 /* UIViewController+Utils.m */,
+				7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */,
+				7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */,
+				7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */,
+				7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */,
+				7F6D0D071B7349C400A15571 /* UINavigationController+Utils.h */,
+				7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */,
 			);
 			path = Category;
 			sourceTree = SOURCE_ROOT;
@@ -616,6 +631,7 @@
 				99CDAF94193486A6008AC850 /* WYPopoverController.m in Sources */,
 				99C8F952192B4337007EFFC1 /* UIDevice+Resolutions.m in Sources */,
 				99E17A4418CFE69C00BD046E /* FMDatabase.m in Sources */,
+				7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */,
 				99C8F97B192B4667007EFFC1 /* UVIdEntity.m in Sources */,
 				99C8F958192B4337007EFFC1 /* UIView+Utils.m in Sources */,
 				99B4001C193D9851002224A5 /* UVActivityIndicatorView.m in Sources */,
@@ -631,6 +647,7 @@
 				99E17A4A18CFE69C00BD046E /* MBProgressHUD.m in Sources */,
 				9930E0721949A038000CE95C /* UIButton+Bootstrap.m in Sources */,
 				99E17A4818CFE69C00BD046E /* FMResultSet.m in Sources */,
+				7F6D0D091B7349C400A15571 /* UINavigationController+Utils.m in Sources */,
 				814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */,
 				99E17A4618CFE69C00BD046E /* FMDatabasePool.m in Sources */,
 				99D2ACBA19F49C30006167AC /* UVSoap.m in Sources */,
@@ -642,6 +659,7 @@
 				99C8F955192B4337007EFFC1 /* UITableView+Utils.m in Sources */,
 				99C8F950192B4337007EFFC1 /* NSObject+UVObjects.m in Sources */,
 				99578FCE19A58C6500D3DDCF /* XMLReader.m in Sources */,
+				7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */,
 				99C8F953192B4337007EFFC1 /* UIImage+Utils.m in Sources */,
 				9930E0711949A038000CE95C /* NSString+FontAwesome.m in Sources */,
 				99C8F97D192B4667007EFFC1 /* UVAudio.m in Sources */,

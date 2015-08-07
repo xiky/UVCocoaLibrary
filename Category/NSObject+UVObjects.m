@@ -38,4 +38,11 @@
 	hud.removeFromSuperViewOnHide = YES;
     return hud;
 }
+
+- (UIViewController*)viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_
+{
+    UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard_ bundle:nil];
+    UIViewController *view = [story instantiateViewControllerWithIdentifier:identifier_];
+    return view;
+}
 @end

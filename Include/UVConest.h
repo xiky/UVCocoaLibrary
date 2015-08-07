@@ -23,6 +23,7 @@
 #define TEMP_FILE_PATH(name_) [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), name_]]
 //文档目录 返回NSString
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
 //应用程序主目录 返回NSString
 #define PATH_OF_APP_HOME    NSHomeDirectory()
 //应用程序临时目录 返回NSString

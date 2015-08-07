@@ -16,4 +16,6 @@
 - (void)iToastMessage:(NSString*)message;
 - (MBProgressHUD*)progress:(UIView*)view_ message:(NSString*)mess;
 - (void)showError:(UVError*)error_;
+
+- (UIViewController*)viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_;
 @end
