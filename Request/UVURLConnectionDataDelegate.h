@@ -23,7 +23,7 @@
 @property(nonatomic,strong,readonly) NSError *error;
 @property(nonatomic,strong,readonly) NSHTTPURLResponse *response;
 @property(nonatomic,assign,readonly) REQUEST_STATUS status;
-@property(nonatomic,strong,readonly) NSURL *downFilePath;
+@property(nonatomic,strong,readonly) NSString *downFilePath;
 @property(nonatomic,strong,readonly) finishDownListener finishDownBlock;
 //http验证用户名
 @property(nonatomic,strong) NSString *username;
@@ -32,7 +32,7 @@
 
 
 - (id)initWithClient:(UVHttpClient*)client delegate:(id<UVHttpClientDelegate>)delegate_;
-- (id)initWithDownClient:(UVHttpClient*)client_ delegate:(id<UVHttpClientDelegate>)delegate_ down:(NSURL*)path_ finish:(finishDownListener)finish_;
+- (id)initWithDownClient:(UVHttpClient*)client_ delegate:(id<UVHttpClientDelegate>)delegate_ down:(NSString*)path_ finish:(finishDownListener)finish_;
 
 ///** 实例化对象
 // 

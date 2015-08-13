@@ -186,7 +186,7 @@ static UVHttpClient *_requestinstance = nil;
  @param NSURL 本地保存的地址
  @param block 下载完成后回调 如果error不为空，表示出现了错误
  */
-- (void)download:(NSURL*)url_ save:(NSURL*)file_ finish:(finishDownListener)finish_
+- (void)download:(NSURL*)url_ save:(NSString*)file_ finish:(finishDownListener)finish_
 {
     [self setURL:url_];
     [self setHTTPMethod:@"GET"];

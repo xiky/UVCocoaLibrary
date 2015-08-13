@@ -68,20 +68,21 @@ static UVURLConnectionDataDelegate *_instance = nil;
     }
     return self;
 }
-- (id)initWithDownClient:(UVHttpClient*)client_ delegate:(id<UVHttpClientDelegate>)delegate_ down:(NSURL*)path_ finish:(finishDownListener)finish_
+- (id)initWithDownClient:(UVHttpClient*)client_ delegate:(id<UVHttpClientDelegate>)delegate_ down:(NSString*)path_ finish:(finishDownListener)finish_
 {
     
     if(self = [self initWithClient:client_ delegate:delegate_])
     {
         NSError *error;
         NSFileManager *fp = [NSFileManager defaultManager];
-        if([fp fileExistsAtPath:path_.path isDirectory:NO])
+        BOOL dirc = NO;
+        if([fp fileExistsAtPath:path_ isDirectory:&dirc])
         {
             NSLog(@"fileExistsAtPath:%@,del it",path_);
-            [fp removeItemAtURL:path_ error:&error];
+            [fp removeItemAtPath:path_ error:&error];
             error = nil;
         }
-        BOOL result = [fp createFileAtPath:path_.path contents:nil attributes:nil];
+        BOOL result = [fp createFileAtPath:path_ contents:nil attributes:nil];
         if(!result)
         {
             NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
@@ -89,7 +90,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
             [self triggerError:error finish:finish_];
             return nil;
         }
-        _file = [NSFileHandle fileHandleForUpdatingURL:path_ error:&error];
+        _file = [NSFileHandle fileHandleForUpdatingAtPath:path_];
         if(error != nil)
         {
             NSLog(@"initWithDownClient error:%@,path:%@",error,path_);
@@ -199,6 +200,13 @@ static UVURLConnectionDataDelegate *_instance = nil;
         {
             [_file closeFile];
             _file = nil;
+        }
+    }
+    if(_status == REQUEST_FINISHED || _status == REQUEST_CANCEL || _status == REQUEST_ERROR)
+    {
+        if(_finishDownBlock != nil)
+        {
+            _finishDownBlock(_error);
         }
     }
     if(_delegate && [_delegate respondsToSelector:@selector(onRequestStatus:status:)])
