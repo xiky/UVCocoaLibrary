@@ -10,7 +10,7 @@
 
 @interface UIImageView (Utils)
 
-- (void)imageWithRemoteUrl:(NSURL*)url_ holder:(UIImage*)holder_;
-- (void)imageWithLocalUrl:(NSURL*)url_;
-- (void)cleanCache:(NSURL*)url_;
+- (void)imageWithRemoteUrl:(NSString*)url_ holder:(UIImage*)holder_;
+- (void)imageWithLocalUrl:(NSString*)url_;
+- (void)cleanCache:(NSString*)url_;
 @end

@@ -14,7 +14,7 @@
 @implementation UIImageView (Utils)
 
 
-- (void)imageWithRemoteUrl:(NSURL*)url_ holder:(UIImage*)holder_
+- (void)imageWithRemoteUrl:(NSString*)url_ holder:(UIImage*)holder_
 {
     self.image = holder_;
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
@@ -26,7 +26,7 @@
         [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
     
-    NSString *filename = [UVUtils md5passwd:url_.absoluteString];
+    NSString *filename = [UVUtils md5passwd:url_];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if(![f fileExistsAtPath:full])
     {
@@ -38,7 +38,7 @@
             UVHttpClient *http = [[UVHttpClient alloc] init];
             http.responseType = RESPONSE_TYPE_BYTES;
             NSError *error;
-            NSData *data = [http get:url_ error:&error];
+            NSData *data = [http get:[NSURL URLWithString:url_] error:&error];
             if(!data || data == nil)
             {
                 @throw [UVError errorWithCodeAndMessage:-1 message:@""];
@@ -47,17 +47,17 @@
             
         } finish:^(UVError *error) {
             if(error != nil)return ;
-            [Self imageWithLocalUrl:[NSURL URLWithString:full]];
+            [Self imageWithLocalUrl:full];
         } showProgressInView:nil message:nil showToast:NO];
     }
     else
     {
-        [self imageWithLocalUrl:[NSURL URLWithString:full]];
+        [self imageWithLocalUrl:full];
     }
 }
-- (void)imageWithLocalUrl:(NSURL*)url_
+- (void)imageWithLocalUrl:(NSString*)url_
 {
-    NSData *data = [NSData dataWithContentsOfURL:url_];
+    NSData *data = [NSData dataWithContentsOfFile:url_];
     if(data)
     {
         UIImage *image = [UIImage imageWithData:data];
@@ -67,12 +67,12 @@
         }
     }
 }
-- (void)cleanCache:(NSURL*)url_
+- (void)cleanCache:(NSString*)url_
 {
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
     path = [path stringByAppendingPathComponent:@"pictures"];
-    NSString *filename = [UVUtils md5passwd:url_.absoluteString];
+    NSString *filename = [UVUtils md5passwd:url_];
     NSString *full = [path stringByAppendingPathComponent:filename];
     
     NSFileManager *f = [NSFileManager defaultManager];
