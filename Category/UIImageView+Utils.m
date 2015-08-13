@@ -76,10 +76,21 @@
     NSString *full = [path stringByAppendingPathComponent:filename];
     
     NSFileManager *f = [NSFileManager defaultManager];
-    if([f fileExistsAtPath:path])
+    if([f fileExistsAtPath:full])
     {
         NSError *error;
         [f removeItemAtPath:full error:&error];
     }
+}
+- (BOOL)isCache:(NSString*)url_
+{
+    NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
+    NSString *path = paths[0];
+    path = [path stringByAppendingPathComponent:@"pictures"];
+    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *full = [path stringByAppendingPathComponent:filename];
+    
+    NSFileManager *f = [NSFileManager defaultManager];
+    return [f fileExistsAtPath:full];
 }
 @end

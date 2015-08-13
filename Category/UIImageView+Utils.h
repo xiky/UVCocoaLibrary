@@ -13,4 +13,5 @@
 - (void)imageWithRemoteUrl:(NSString*)url_ holder:(UIImage*)holder_;
 - (void)imageWithLocalUrl:(NSString*)url_;
 - (void)cleanCache:(NSString*)url_;
+- (BOOL)isCache:(NSString*)url_;
 @end
