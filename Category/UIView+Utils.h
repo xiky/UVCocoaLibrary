@@ -55,4 +55,8 @@
  */
 - (UIView *)showBadgeValue:(NSString *)strBadgeValue;
 
+
+//设置视图圆角
+- (void)makeCornerRadius:(CGFloat)radius_;
+
 @end

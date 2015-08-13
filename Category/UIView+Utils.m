@@ -8,6 +8,7 @@
 
 #import "UIView+Utils.h"
 #import <objc/runtime.h>
+#import <QuartzCore/QuartzCore.h>
 
 static char kActionHandlerTapGestureKey;
 static char kActionHandlerTapBlockKey;
@@ -119,5 +120,12 @@ static char kActionHandlerTapBlockKey;
             break;
         }
     }
+}
+
+//设置视图圆角
+- (void)makeCornerRadius:(CGFloat)radius_
+{
+    self.layer.cornerRadius = radius_;
+    self.layer.masksToBounds = YES;
 }
 @end
