@@ -16,6 +16,10 @@
 
 - (void)imageWithRemoteUrl:(NSString*)url_ holder:(UIImage*)holder_
 {
+    if(url_.length < 1)
+    {
+        return;
+    }
     self.image = holder_;
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
