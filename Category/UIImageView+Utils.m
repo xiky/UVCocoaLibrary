@@ -20,7 +20,11 @@
     {
         return;
     }
-    self.image = holder_;
+    if(holder_ != nil)
+    {
+        self.image = holder_;
+    }
+    
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
     path = [path stringByAppendingPathComponent:@"pictures"];
