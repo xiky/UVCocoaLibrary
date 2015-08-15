@@ -63,7 +63,7 @@ static UVRequest *_requestinstance = nil;
 {
     if(message == nil && view != nil)
     {
-        message = @"loading";
+        message = nil;
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak UVRequest *Self = self;
@@ -132,8 +132,8 @@ static UVRequest *_requestinstance = nil;
         return nil;
     }
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view_ animated:YES];
-    
-	hud.mode = MBProgressHUDModeText;
+    hud.animationType = MBProgressHUDAnimationFade;
+	hud.mode = MBProgressHUDModeIndeterminate;
 	hud.labelText = mess_;
     
 	hud.removeFromSuperViewOnHide = YES;
