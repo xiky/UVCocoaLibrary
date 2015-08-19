@@ -131,6 +131,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    
     _error = error;
     _data = nil;
     [self triggerStatus:REQUEST_ERROR];

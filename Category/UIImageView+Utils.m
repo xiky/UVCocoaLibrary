@@ -11,6 +11,7 @@
 #import "UVHttpClient.h"
 #import "UVRequest.h"
 #import "UVError.h"
+#import "UIImage+Utils.h"
 @implementation UIImageView (Utils)
 
 
@@ -25,6 +26,10 @@
         self.image = holder_;
     }
     
+//    self.contentMode = UIViewContentModeScaleAspectFit;
+    self.clipsToBounds = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    self.layer.shouldRasterize = YES;
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
     path = [path stringByAppendingPathComponent:@"pictures"];
@@ -69,6 +74,7 @@
     if(data)
     {
         UIImage *image = [UIImage imageWithData:data];
+        image = [image scaleToSize:self.frame.size];
         if(image)
         {
             self.image = image;

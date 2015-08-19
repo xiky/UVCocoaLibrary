@@ -73,17 +73,50 @@
 //UIImage 缩放到指定大小
 - (UIImage *)scaleToSize:(CGSize)size
 {
-    // 创建一个bitmap的context
-    // 并把它设置成为当前正在使用的context
+    //CGSize size = [[_imgInfo objectForKey:HOLDSIZE] CGSizeValue];
+    size.width = size.width*2;
+    size.height = size.height*2;
+    CGSize imageSize = self.size;
+    
+    CGSize scalesize = CGSizeZero;
+    
+    CGFloat imageScale = imageSize.width/imageSize.height;
+    CGFloat sizeScale = size.width/size.height;
+    
+    if(sizeScale>=imageScale){
+        scalesize.width = imageSize.width;
+        scalesize.height = imageSize.width/sizeScale;
+    }else if(sizeScale<imageScale){
+        scalesize.height = imageSize.height;
+        scalesize.width = imageSize.height*sizeScale;
+    }
+    
+    CGRect rect = CGRectMake((imageSize.width-scalesize.width)/2, (imageSize.height-scalesize.height)/2, scalesize.width, scalesize.height);
+    CGImageRef sourceImageRef = [self CGImage];
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
     UIGraphicsBeginImageContext(size);
-    // 绘制改变大小的图片
-    [self drawInRect:CGRectMake(size.width/8, size.height/8, size.width*0.75, size.height*0.75)];
-    // 从当前context中创建一个改变大小后的图片
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    // 使当前的context出堆栈
+    [newImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    // 返回新的改变大小后的图片
-    return scaledImage;
+    NSData *data = UIImagePNGRepresentation(reSizeImage);
+    
+    return [UIImage imageWithData:data];
+
+//    self.image = UIImagePNGRepresentation(reSizeImage);
+//
+//    // 创建一个bitmap的context
+//    // 并把它设置成为当前正在使用的context
+//    UIGraphicsBeginImageContext(size);
+//    // 绘制改变大小的图片
+//    [self drawInRect:CGRectMake(size.width/8, size.height/8, size.width*0.75, size.height*0.75)];
+//    // 从当前context中创建一个改变大小后的图片
+//    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//    // 使当前的context出堆栈
+//    UIGraphicsEndImageContext();
+//    // 返回新的改变大小后的图片
+//    return scaledImage;
 }
 
 - (void)saveToPhotoAlbum:(void (^)(NSURL *assetURL, UVError *error))finish_;

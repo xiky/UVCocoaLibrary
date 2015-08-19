@@ -259,7 +259,8 @@ static UVHttpClient *_requestinstance = nil;
     NSData *data = nil;
     if(delegate.error)
     {
-        *error_ = delegate.error;
+        *error_ = [NSError errorWithDomain:@"" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"服务器通信失败，请确认网络连接正常或与我们联系"}];
+//        *error_ = delegate.error;
     }
     else if(delegate.data!=nil)
     {

@@ -15,6 +15,7 @@
 // 14-2-14  c00891 create
 //
 #import <UIKit/UIKit.h>
+typedef void (^startProgress)(NSError *error);
 
 @class UVError,MBProgressHUD;
 
@@ -33,6 +34,9 @@
  @return UVRequest
  */
 +(UVRequest*)instance;
+
+- (void)progress:(void (^)(UIView *view_, NSString *message_))start_ end:(void (^)())end_;
+
 
 /** 发送异步请求
  

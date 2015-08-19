@@ -10,25 +10,25 @@
 @implementation UIViewController (Utils)
 
 
-/**
- * 支持的设备方向
- */
-//for ios5.0
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-//for ios6.0
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
+///**
+// * 支持的设备方向
+// */
+////for ios5.0
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//{
+//    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+//}
+//
+////for ios6.0
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//
+//- (BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
 
 
 #pragma mark - private
