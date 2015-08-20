@@ -15,9 +15,11 @@
 // 14-2-21  c00891 create
 //
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "UVError.h"
 #import "UVHttpClient.h"
 #import "UVURLConnectionDataDelegate.h"
 #import "XMLReader.h"
+
 
 
 //文件上传相关常量定义
@@ -203,7 +205,7 @@ static UVHttpClient *_requestinstance = nil;
     if(!_connection)
     {
         NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建connection失败"};
-        NSError *error = [NSError errorWithDomain:@"UVHttpClient" code:-1 userInfo:info];
+        NSError *error = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
         delegate = nil;
         info = nil;
         [self triggerStatus:REQUEST_ERROR];
@@ -231,7 +233,7 @@ static UVHttpClient *_requestinstance = nil;
     if(!_connection)
     {
         NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建connection失败"};
-        *error_ = [NSError errorWithDomain:@"UVHttpClient" code:-1 userInfo:info];
+        *error_ = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
         delegate = nil;
         info = nil;
         [self triggerStatus:REQUEST_ERROR];
@@ -246,7 +248,7 @@ static UVHttpClient *_requestinstance = nil;
         if([[NSDate date] timeIntervalSinceDate:date]>_timeout)
         {
             NSDictionary *info = @{NSLocalizedDescriptionKey:@"连接超时"};
-            *error_ = [NSError errorWithDomain:@"UVHttpClient" code:-1 userInfo:info];
+            *error_ = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
             delegate = nil;
             date = nil;
             info = nil;
@@ -259,7 +261,7 @@ static UVHttpClient *_requestinstance = nil;
     NSData *data = nil;
     if(delegate.error)
     {
-        *error_ = [NSError errorWithDomain:@"" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"服务器通信失败，请确认网络连接正常或与我们联系"}];
+        *error_ = [NSError errorWithDomain:@"" code:UV_GENERAL_ERROR_CODE userInfo:@{NSLocalizedDescriptionKey:@"服务器通信失败，请确认网络连接正常或与我们联系"}];
 //        *error_ = delegate.error;
     }
     else if(delegate.data!=nil)

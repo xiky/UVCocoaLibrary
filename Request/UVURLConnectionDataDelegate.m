@@ -16,6 +16,7 @@
 //
 
 #import "UVURLConnectionDataDelegate.h"
+#import "UVError.h"
 
 static UVURLConnectionDataDelegate *_instance = nil;
 @interface UVURLConnectionDataDelegate () <NSURLConnectionDataDelegate>
@@ -86,7 +87,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
         if(!result)
         {
             NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
-            error = [NSError errorWithDomain:@"UVHttpClient" code:-1 userInfo:info];
+            error = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
             [self triggerError:error finish:finish_];
             return nil;
         }

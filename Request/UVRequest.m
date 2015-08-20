@@ -18,6 +18,7 @@
 #import "UVRequest.h"
 
 #import "MBProgressHUD.h"
+
 #import "iToast.h"
 #import "UVError.h"
 
@@ -83,7 +84,7 @@ static UVRequest *_requestinstance = nil;
             err = exception;
         }
         @catch (NSException *exception) {
-            err = [UVError errorWithCodeAndMessage:-1 message:exception.reason];
+            err = [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:exception.reason];
             err.orginalException = exception;
         }
         @catch (NSError *error) {

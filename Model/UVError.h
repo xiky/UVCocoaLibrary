@@ -20,9 +20,10 @@
         UVLog("error:%@",error);
  
  */
-
-#define UV_ERROR_CODE_CANCEL (-100)
-#define UV_EROOR_CODE_UNKNOWN (-101)
+//定义库内部使用的错误码
+#define UV_GENERAL_ERROR_CODE (-10101)
+#define UV_ERROR_CODE_CANCEL (-10102)
+#define UV_EROOR_CODE_UNKNOWN (-10103)
 
 @interface UVError :NSObject
 //错误码

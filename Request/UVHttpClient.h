@@ -19,6 +19,7 @@
 #define REQUEST_FIELD_NAME @"name"
 //请求参数值名
 #define REQUEST_FIELD_VALUE @"value"
+
 //返回数据格式
 typedef enum {
     RESPONSE_TYPE_BYTES=1,
