@@ -9,6 +9,8 @@
 #import "UIImage+Utils.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "UVError.h"
+#import "UVHttpClient.h"
+#import "UVUtils.h"
 
 @implementation UIImage (Utils)
 
@@ -229,6 +231,80 @@
     return result;
 }
 
+- (UIImage*)imageWithRemoteUrl:(NSString*)url_
+{
+    if(url_.length < 1)
+    {
+        @throw [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:@""];
+    }
 
+
+    NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
+    NSString *path = paths[0];
+    path = [path stringByAppendingPathComponent:@"images"];
+    NSFileManager *f = [NSFileManager defaultManager];
+    if(![f fileExistsAtPath:path])
+    {
+        [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
+    }
+
+    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *full = [path stringByAppendingPathComponent:filename];
+    if(![f fileExistsAtPath:full])
+    {
+        
+
+        UVHttpClient *http = [[UVHttpClient alloc] init];
+        http.responseType = RESPONSE_TYPE_BYTES;
+        NSError *error;
+        NSData *data = [http get:[NSURL URLWithString:url_] error:&error];
+        if(error != nil)
+        {
+            @throw [UVError errorWithNSError:error];
+        }
+        if(!data || data == nil)
+        {
+            @throw [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:@""];
+        }
+        [data writeToFile:full atomically:YES];
+    }
+    NSData *data = [NSData dataWithContentsOfFile:full];
+    if(data == nil)
+    {
+        @throw [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:@""];
+    }
+    return [UIImage imageWithData:data];
+}
+- (void)cleanCache:(NSString*)url_
+{
+    NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
+    NSString *path = paths[0];
+    path = [path stringByAppendingPathComponent:@"images"];
+    NSFileManager *f = [NSFileManager defaultManager];
+    if(![f fileExistsAtPath:path])
+    {
+        [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
+    }
+    
+    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *full = [path stringByAppendingPathComponent:filename];
+    if(![f fileExistsAtPath:full])
+    {
+        NSError *error;
+        [f removeItemAtPath:full error:&error];
+    }
+}
+
+- (BOOL)isCache:(NSString*)url_
+{
+    NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
+    NSString *path = paths[0];
+    path = [path stringByAppendingPathComponent:@"images"];
+    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *full = [path stringByAppendingPathComponent:filename];
+    
+    NSFileManager *f = [NSFileManager defaultManager];
+    return [f fileExistsAtPath:full];
+}
 
 @end

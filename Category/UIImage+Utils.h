@@ -61,4 +61,8 @@
 - (UIImage *)tintedImageWithColor:(UIColor *)tintColor;
 - (UIImage *)tintedGradientImageWithColor:(UIColor *)tintColor;
 
+
+- (UIImage*)imageWithRemoteUrl:(NSString*)url_;
+- (void)cleanCache:(NSString*)url_;
+- (BOOL)isCache:(NSString*)url_;
 @end
