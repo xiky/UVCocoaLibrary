@@ -13,5 +13,6 @@
 //+ (void)dataWithUrl:(NSString*)url_ finish:();
 //+ (void)delCacheByUrl:(NSString*)url_;
 //+ (BOOL)existsCacheByUrl:(NSString*)url_;
-
+- (float)calcCachePathFileSize;
+- (void)cleanCachePathFiles;
 @end
