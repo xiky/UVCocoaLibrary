@@ -9,24 +9,25 @@
 #import "UVDevice.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#include "UVUtils.h"
+
 
 @implementation UVDevice
 
 
-
-- (NSString*)UUID
+- (NSString*)appVersionName
 {
-//        CFUUIDRef puuid = CFUUIDCreate( nil );
-//        CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
-//        NSString * result = (__bridge NSString *)uuidString;
-//        CFRelease(puuid);
-//        CFRelease(uuidString);
-//        return result;
-    NSString *ident = [NSString stringWithFormat:@"%@_%@",[self MAC],[[NSBundle mainBundle] bundleIdentifier]];
-    NSLog(@"ident:%@",ident);
-    return [UVUtils md5passwd:ident];
+    NSDictionary *info = [NSBundle mainBundle].infoDictionary;
+    
+    return info[@"CFBundleShortVersionString"];
+    //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
 }
+- (NSString*)appVersionCode
+{
+    NSDictionary *info = [NSBundle mainBundle].infoDictionary;
+
+    return info[@"CFBundleVersion"];
+}
+
 - (NSString *)getIPAddress
 {
     NSString *address = @"";

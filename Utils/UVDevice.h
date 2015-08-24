@@ -10,6 +10,7 @@
 
 @interface UVDevice : NSObject
 
-- (NSString*)UUID;
-- (NSString*)MAC;
+- (NSString*)appVersionName;
+- (NSString*)appVersionCode;
+- (NSString*)getIPAddress;
 @end
