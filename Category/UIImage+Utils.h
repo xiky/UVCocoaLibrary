@@ -18,14 +18,14 @@
  * @param UIColor 指定要使用的颜色
  * @return UIImage 新图像
  */
-+ (UIImage *) createImageWithColor: (UIColor *) color;
++ (UIImage *) imageWithColor: (UIColor *) color;
 /**
  * 使用尺寸和起始颜色创建一个新的图像
  * @param CGRect rectArea 图像大小
  * @param UIColor startcolor 开始颜色
  * @praam UIColor endcolor 结束颜色
  */
-+ (UIImage *) createImageWithGradient:(CGRect)rectArea colorStart:(UIColor*) startColor colorEnd:(UIColor*)endColor;
++ (UIImage *) imageWithGradient:(CGRect)rectArea colorStart:(UIColor*) startColor colorEnd:(UIColor*)endColor;
 
 /**
  * 在当前图像中加入文字

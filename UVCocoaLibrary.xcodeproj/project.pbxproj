@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F0D50181B8D8A8B0017359F /* NSString+UVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */; };
+		7F0D501B1B8DA94A0017359F /* UVValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D501A1B8DA94A0017359F /* UVValidate.m */; };
 		7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */; };
 		7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */; };
 		7F6D0D091B7349C400A15571 /* UINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */; };
@@ -154,6 +155,8 @@
 /* Begin PBXFileReference section */
 		7F0D50161B8D8A8B0017359F /* NSString+UVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UVUtils.h"; sourceTree = "<group>"; };
 		7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UVUtils.m"; sourceTree = "<group>"; };
+		7F0D50191B8DA94A0017359F /* UVValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVValidate.h; sourceTree = "<group>"; };
+		7F0D501A1B8DA94A0017359F /* UVValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVValidate.m; sourceTree = "<group>"; };
 		7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
 		7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
 		7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 				99C8F979192B4667007EFFC1 /* UVUtils.m */,
 				7F6D0DFD1B7C9AA100A15571 /* UVCache.h */,
 				7F6D0DFE1B7C9AA100A15571 /* UVCache.m */,
+				7F0D50191B8DA94A0017359F /* UVValidate.h */,
+				7F0D501A1B8DA94A0017359F /* UVValidate.m */,
 			);
 			path = Utils;
 			sourceTree = SOURCE_ROOT;
@@ -673,6 +678,7 @@
 				99578FCE19A58C6500D3DDCF /* XMLReader.m in Sources */,
 				7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */,
 				99C8F953192B4337007EFFC1 /* UIImage+Utils.m in Sources */,
+				7F0D501B1B8DA94A0017359F /* UVValidate.m in Sources */,
 				9930E0711949A038000CE95C /* NSString+FontAwesome.m in Sources */,
 				99C8F97D192B4667007EFFC1 /* UVAudio.m in Sources */,
 				99C8F980192B4667007EFFC1 /* UVRequest.m in Sources */,
