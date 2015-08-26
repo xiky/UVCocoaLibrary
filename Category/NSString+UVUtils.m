@@ -10,4 +10,10 @@
 
 @implementation NSString (UVUtils)
 
+- (BOOL)matchByRegpx:(NSString*)reg_
+{
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg_];
+    BOOL isMatch = [pred evaluateWithObject:self];
+    return isMatch;
+}
 @end

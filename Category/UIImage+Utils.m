@@ -75,36 +75,75 @@
 //UIImage 缩放到指定大小
 - (UIImage *)scaleToSize:(CGSize)size
 {
-    //CGSize size = [[_imgInfo objectForKey:HOLDSIZE] CGSizeValue];
-    size.width = size.width*2;
-    size.height = size.height*2;
-    CGSize imageSize = self.size;
+    CGFloat width = CGImageGetWidth(self.CGImage);
+    CGFloat height = CGImageGetHeight(self.CGImage);
     
-    CGSize scalesize = CGSizeZero;
+    float verticalRadio = size.height*1.0/height;
+    float horizontalRadio = size.width*1.0/width;
     
-    CGFloat imageScale = imageSize.width/imageSize.height;
-    CGFloat sizeScale = size.width/size.height;
-    
-    if(sizeScale>=imageScale){
-        scalesize.width = imageSize.width;
-        scalesize.height = imageSize.width/sizeScale;
-    }else if(sizeScale<imageScale){
-        scalesize.height = imageSize.height;
-        scalesize.width = imageSize.height*sizeScale;
+    float radio = 1;
+    if(verticalRadio>1 && horizontalRadio>1)
+    {
+        radio = verticalRadio > horizontalRadio ? horizontalRadio : verticalRadio;
+    }
+    else
+    {
+        radio = verticalRadio < horizontalRadio ? verticalRadio : horizontalRadio;
     }
     
-    CGRect rect = CGRectMake((imageSize.width-scalesize.width)/2, (imageSize.height-scalesize.height)/2, scalesize.width, scalesize.height);
-    CGImageRef sourceImageRef = [self CGImage];
-    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
-    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    width = width*radio;
+    height = height*radio;
     
+    int xPos = (size.width - width)/2;
+    int yPos = (size.height-height)/2;
+    
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
     UIGraphicsBeginImageContext(size);
-    [newImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    NSData *data = UIImagePNGRepresentation(reSizeImage);
     
-    return [UIImage imageWithData:data];
+    // 绘制改变大小的图片
+    [self drawInRect:CGRectMake(xPos, yPos, width, height)];
+    
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    
+    // 返回新的改变大小后的图片
+    return scaledImage;
+    
+//    
+//    //CGSize size = [[_imgInfo objectForKey:HOLDSIZE] CGSizeValue];
+//    size.width = size.width*2;
+//    size.height = size.height*2;
+//    CGSize imageSize = self.size;
+//    
+//    CGSize scalesize = CGSizeZero;
+//    
+//    CGFloat imageScale = imageSize.width/imageSize.height;
+//    CGFloat sizeScale = size.width/size.height;
+//    
+//    if(sizeScale>=imageScale){
+//        scalesize.width = imageSize.width;
+//        scalesize.height = imageSize.width/sizeScale;
+//    }else if(sizeScale<imageScale){
+//        scalesize.height = imageSize.height;
+//        scalesize.width = imageSize.height*sizeScale;
+//    }
+//    
+//    CGRect rect = CGRectMake((imageSize.width-scalesize.width)/2, (imageSize.height-scalesize.height)/2, scalesize.width, scalesize.height);
+//    CGImageRef sourceImageRef = [self CGImage];
+//    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
+//    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+//    
+//    UIGraphicsBeginImageContext(size);
+//    [newImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+//    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    NSData *data = UIImagePNGRepresentation(reSizeImage);
+//    
+//    return [UIImage imageWithData:data];
 
 //    self.image = UIImagePNGRepresentation(reSizeImage);
 //

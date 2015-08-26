@@ -10,4 +10,5 @@
 
 @interface NSString (UVUtils)
 
+- (BOOL)matchByRegpx:(NSString*)reg_;
 @end

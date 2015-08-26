@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0D50181B8D8A8B0017359F /* NSString+UVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */; };
 		7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */; };
 		7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */; };
 		7F6D0D091B7349C400A15571 /* UINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */; };
@@ -151,6 +152,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F0D50161B8D8A8B0017359F /* NSString+UVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UVUtils.h"; sourceTree = "<group>"; };
+		7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UVUtils.m"; sourceTree = "<group>"; };
 		7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
 		7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
 		7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 				7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */,
 				7F6D0D071B7349C400A15571 /* UINavigationController+Utils.h */,
 				7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */,
+				7F0D50161B8D8A8B0017359F /* NSString+UVUtils.h */,
+				7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */,
 			);
 			path = Category;
 			sourceTree = SOURCE_ROOT;
@@ -656,6 +661,7 @@
 				814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */,
 				99E17A4618CFE69C00BD046E /* FMDatabasePool.m in Sources */,
 				99D2ACBA19F49C30006167AC /* UVSoap.m in Sources */,
+				7F0D50181B8D8A8B0017359F /* NSString+UVUtils.m in Sources */,
 				99C8F95F192B4440007EFFC1 /* UVMenuButton.m in Sources */,
 				7F6D0DFF1B7C9AA100A15571 /* UVCache.m in Sources */,
 				99E17A4718CFE69C00BD046E /* FMDatabaseQueue.m in Sources */,
