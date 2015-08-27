@@ -21,6 +21,7 @@
 
 #import "iToast.h"
 #import "UVError.h"
+#import "UIView+Toast.h"
 
 static UVRequest *_requestinstance = nil;
 @implementation UVRequest
@@ -104,7 +105,7 @@ static UVRequest *_requestinstance = nil;
                 }
                 if(showToast_ && err != nil)
                 {
-                    [Self showError:err];
+                    [Self showError:err inview:view];
                 }
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             });
@@ -119,12 +120,31 @@ static UVRequest *_requestinstance = nil;
         _requestQueue = nil;
     }
 }
-- (void)showError:(UVError*)error_
+- (void)showError:(UVError*)error_ inview:(UIView*)view_
 {
     if(error_ == nil)return;
-    NSString *mess = [NSString stringWithFormat:@"%@,错误码:%ld",error_.message, (long)error_.code];
-     [[[[iToast makeText:mess] setGravity:iToastGravityBottom] setDuration:2000] show];
-    mess = nil;
+    NSString *mess = [NSString stringWithFormat:@"%@",error_.message];
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view_];
+    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:0.8f];
+    [view_ addSubview:hud];
+
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_icon_error"]];
+    
+    // Set custom view mode
+    hud.mode = MBProgressHUDModeCustomView;
+    
+    hud.detailsLabelText = mess;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud show:YES];
+    [hud hide:YES afterDelay:2];
+    
+    
+//    NSString *mess = [NSString stringWithFormat:@"%@,错误码:%ld",error_.message, (long)error_.code];
+    
+    
+//    [view_ makeToast:mess duration:2 position:CSToastPositionTop];
+//    [[[[iToast makeText:mess] setGravity:iToastGravityBottom] setDuration:2000] show];
+//    mess = nil;
 }
 - (MBProgressHUD*)showProgress:(UIView*)view_ message:(NSString*)mess_
 {
@@ -133,6 +153,7 @@ static UVRequest *_requestinstance = nil;
         return nil;
     }
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view_ animated:YES];
+    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:.8f];
     hud.animationType = MBProgressHUDAnimationFade;
 	hud.mode = MBProgressHUDModeIndeterminate;
 	hud.labelText = mess_;
