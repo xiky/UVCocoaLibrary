@@ -13,6 +13,7 @@
 
 @implementation NSObject (UVObjects)
 
+
 - (void)iToastMessage:(NSString*)message
 {
     [[[[iToast makeText:message] setGravity:iToastGravityBottom] setDuration:2000] show];

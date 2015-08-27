@@ -93,6 +93,7 @@
 		99F26CEA1929EB2700A684FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F26CE91929EB2700A684FF /* AVFoundation.framework */; };
 		99F26CEC1929EB2F00A684FF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F26CEB1929EB2F00A684FF /* AudioToolbox.framework */; };
 		99F341DE1924A66000AA83D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F341DD1924A66000AA83D7 /* UIKit.framework */; };
+		FB4996971B8F0041007A1DA7 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4996961B8F0041007A1DA7 /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +260,8 @@
 		99F26CE91929EB2700A684FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		99F26CEB1929EB2F00A684FF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		99F341DD1924A66000AA83D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FB4996951B8F0041007A1DA7 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		FB4996961B8F0041007A1DA7 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +517,7 @@
 		99E17A3118CFE69C00BD046E /* ThridLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				FB4996941B8F000A007A1DA7 /* Toast */,
 				99578FCB19A58C6500D3DDCF /* XMLReader */,
 				99CDAF8F193486A6008AC850 /* WYPopoverController */,
 				99E17A3218CFE69C00BD046E /* FDMS */,
@@ -557,6 +561,15 @@
 				99E17A4318CFE69C00BD046E /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		FB4996941B8F000A007A1DA7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				FB4996951B8F0041007A1DA7 /* UIView+Toast.h */,
+				FB4996961B8F0041007A1DA7 /* UIView+Toast.m */,
+			);
+			name = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +657,7 @@
 				99C8F981192B4667007EFFC1 /* UVURLConnectionDataDelegate.m in Sources */,
 				99C8F959192B4337007EFFC1 /* UIViewController+Utils.m in Sources */,
 				99CDAF94193486A6008AC850 /* WYPopoverController.m in Sources */,
+				FB4996971B8F0041007A1DA7 /* UIView+Toast.m in Sources */,
 				99C8F952192B4337007EFFC1 /* UIDevice+Resolutions.m in Sources */,
 				99E17A4418CFE69C00BD046E /* FMDatabase.m in Sources */,
 				7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */,
