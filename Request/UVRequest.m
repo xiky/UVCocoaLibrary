@@ -122,7 +122,7 @@ static UVRequest *_requestinstance = nil;
 }
 - (void)showError:(UVError*)error_ inview:(UIView*)view_
 {
-    if(error_ == nil)return;
+    if(error_ == nil || view_ == nil)return;
     NSString *mess = [NSString stringWithFormat:@"%@",error_.message];
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view_];
     hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:0.8f];

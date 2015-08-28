@@ -22,7 +22,7 @@
 }
 - (BOOL)email:(NSString*)str_
 {
-    BOOL result = [self custom:str_ repx:@"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/"];
+    BOOL result = [self custom:str_ repx:@"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,7}$"];
     return result;
 }
 - (BOOL)phone:(NSString*)str_
