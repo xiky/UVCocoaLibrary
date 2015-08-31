@@ -125,7 +125,7 @@ static UVRequest *_requestinstance = nil;
     if(error_ == nil || view_ == nil)return;
     NSString *mess = [NSString stringWithFormat:@"%@",error_.message];
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view_];
-    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:0.8f];
+//    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:0.8f];
     [view_ addSubview:hud];
 
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_icon_error"]];
@@ -153,7 +153,7 @@ static UVRequest *_requestinstance = nil;
         return nil;
     }
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view_ animated:YES];
-    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:.8f];
+//    hud.color = [UIColor colorWithRed:77.0f/255.0f green:185.0/255.0f blue:237.0/255.0f alpha:.8f];
     hud.animationType = MBProgressHUDAnimationFade;
 	hud.mode = MBProgressHUDModeIndeterminate;
 	hud.labelText = mess_;
