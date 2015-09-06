@@ -12,5 +12,6 @@
 
 - (NSString*)appVersionName;
 - (NSString*)appVersionCode;
+- (NSString *)bundleid;
 - (NSString*)getIPAddress;
 @end
