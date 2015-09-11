@@ -14,6 +14,7 @@
 		7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */; };
 		7F6D0D091B7349C400A15571 /* UINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */; };
 		7F6D0DFF1B7C9AA100A15571 /* UVCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0DFE1B7C9AA100A15571 /* UVCache.m */; };
+		7F7C43D21BA186F900E54B4B /* NSMutableArray+UVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C43D11BA186F900E54B4B /* NSMutableArray+UVUtils.m */; };
 		7F823AAE1B9FC8C800B1F68D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823A8F1B9FC8C800B1F68D /* FMDatabase.m */; };
 		7F823AAF1B9FC8C800B1F68D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823A911B9FC8C800B1F68D /* FMDatabaseAdditions.m */; };
 		7F823AB01B9FC8C800B1F68D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823A931B9FC8C800B1F68D /* FMDatabasePool.m */; };
@@ -150,6 +151,8 @@
 		7F6D0D081B7349C400A15571 /* UINavigationController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Utils.m"; sourceTree = "<group>"; };
 		7F6D0DFD1B7C9AA100A15571 /* UVCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVCache.h; sourceTree = "<group>"; };
 		7F6D0DFE1B7C9AA100A15571 /* UVCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVCache.m; sourceTree = "<group>"; };
+		7F7C43D01BA186F900E54B4B /* NSMutableArray+UVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+UVUtils.h"; sourceTree = "<group>"; };
+		7F7C43D11BA186F900E54B4B /* NSMutableArray+UVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+UVUtils.m"; sourceTree = "<group>"; };
 		7F823A8E1B9FC8C800B1F68D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		7F823A8F1B9FC8C800B1F68D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		7F823A901B9FC8C800B1F68D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				7F0D50171B8D8A8B0017359F /* NSString+UVUtils.m */,
 				7F1498671B95890C00950789 /* UIScrollView+UVUtils.h */,
 				7F1498681B95890C00950789 /* UIScrollView+UVUtils.m */,
+				7F7C43D01BA186F900E54B4B /* NSMutableArray+UVUtils.h */,
+				7F7C43D11BA186F900E54B4B /* NSMutableArray+UVUtils.m */,
 			);
 			path = Category;
 			sourceTree = SOURCE_ROOT;
@@ -677,6 +682,7 @@
 				7F823AB71B9FC8C800B1F68D /* WYPopoverController.m in Sources */,
 				7F1498691B95890C00950789 /* UIScrollView+UVUtils.m in Sources */,
 				99C8F97E192B4667007EFFC1 /* UVError.m in Sources */,
+				7F7C43D21BA186F900E54B4B /* NSMutableArray+UVUtils.m in Sources */,
 				99C8F955192B4337007EFFC1 /* UITableView+Utils.m in Sources */,
 				99C8F950192B4337007EFFC1 /* NSObject+UVObjects.m in Sources */,
 				7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */,

@@ -10,28 +10,33 @@
 
 @implementation UIView (Shake)
 
-- (void)shake:(int)times withDelta:(CGFloat)delta
+- (void)shake:(int)times withDelta:(CGFloat)delta finish:(void (^)())finish_
 {
-	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:0.03 shakeDirection:ShakeDirectionHorizontal];
+	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:0.03 shakeDirection:ShakeDirectionHorizontal finish:finish_];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval
+- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval finish:(void (^)())finish_
 {
-	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:ShakeDirectionHorizontal];
+	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:ShakeDirectionHorizontal finish:finish_];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection
+- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection finish:(void (^)())finish_
 {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:shakeDirection];
+    [self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:shakeDirection finish:finish_];
 }
 
-- (void)_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection
+- (void)_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection finish:(void (^)())finish_
 {
 	[UIView animateWithDuration:interval animations:^{
 		self.transform = (shakeDirection == ShakeDirectionHorizontal) ? CGAffineTransformMakeTranslation(delta * direction, 0) : CGAffineTransformMakeTranslation(0, delta * direction);
 	} completion:^(BOOL finished) {
-		if(current >= times) {
+		if(current >= times)
+        {
 			self.transform = CGAffineTransformIdentity;
+            if(finish_ != nil)
+            {
+                finish_();
+            }
 			return;
 		}
 		[self _shake:(times - 1)
@@ -39,7 +44,7 @@
 		currentTimes:current + 1
 		   withDelta:delta
 			andSpeed:interval
-         shakeDirection:shakeDirection];
+         shakeDirection:shakeDirection finish:finish_];
 	}];
 }
 

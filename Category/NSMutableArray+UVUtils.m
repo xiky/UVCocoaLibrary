@@ -10,4 +10,13 @@
 
 @implementation NSMutableArray (UVUtils)
 
+- (void)randromSort
+{
+    int count = (int)[self count];
+    for (int i = 0; i < count; ++i)
+    {
+        int n = (arc4random() % (count - i)) + i;
+        [self exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
 @end

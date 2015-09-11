@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, ShakeDirection) {
 * @param times The number of shakes
 * @param delta The width of the shake
 */
-- (void)shake:(int)times withDelta:(CGFloat)delta;
+- (void)shake:(int)times withDelta:(CGFloat)delta finish:(void (^)())finish_;
 
 /** Shake the UITextField at a custom speed
  *
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, ShakeDirection) {
  * @param delta The width of the shake
  * @param interval The duration of one shake
  */
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval;
+- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval finish:(void (^)())finish_;
 
 /** Shake the UITextField at a custom speed
  *
@@ -47,6 +47,6 @@ typedef NS_ENUM(NSInteger, ShakeDirection) {
  * @param interval The duration of one shake 每次抖动完成时间 如0.04
  * @param direction of the shake 抖动方向
  */
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection;
+- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection finish:(void (^)())finish_;
 
 @end
