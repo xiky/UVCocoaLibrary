@@ -11,7 +11,7 @@
 #import "UVError.h"
 #import "UVHttpClient.h"
 #import "UVUtils.h"
-
+#import "NSString+UVUtils.h"
 @implementation UIImage (Utils)
 
 /**
@@ -287,7 +287,7 @@
         [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
 
-    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *filename = [url_ md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if(![f fileExistsAtPath:full])
     {
@@ -325,7 +325,7 @@
         [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
     
-    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *filename = [url_ md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if(![f fileExistsAtPath:full])
     {
@@ -339,7 +339,7 @@
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
     path = [path stringByAppendingPathComponent:@"images"];
-    NSString *filename = [UVUtils md5passwd:url_];
+    NSString *filename = [url_ md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     
     NSFileManager *f = [NSFileManager defaultManager];
