@@ -19,15 +19,15 @@
 
 #pragma mark - 全局定义
 
-//临时目录 返回 NSURL
-#define TEMP_FILE_PATH(name_) [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), name_]]
-//文档目录 返回NSString
-#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+//临时目录 返回 NSString
+#define UV_PATH_TEMP_WITH_NAME(name_) [NSTemporaryDirectory() stringByAppendingPathComponent:name_]
 
-//应用程序主目录 返回NSString
-#define PATH_OF_APP_HOME    NSHomeDirectory()
-//应用程序临时目录 返回NSString
-#define PATH_OF_TEMP        NSTemporaryDirectory()
+//文档目录 返回NSString
+#define UV_PATH_DOCUMENT [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define UV_PATH_DOCUMENT_WITH_NAME(name_) [(NSString*)[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:name_]
+
+#define UV_PATH_HOME_WITH_NAME(name_) [NSHomeDirectory() stringByAppendingPathComponent:name_]
 
 //当前IOS版本
 #define UV_IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
