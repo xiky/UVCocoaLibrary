@@ -277,7 +277,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
         wrapperView.layer.shadowOffset = CSToastShadowOffset;
     }
 
-    wrapperView.backgroundColor = [[UIColor colorWithRed:77.0/255.0f green:185.0/255.0f blue:236.0/255.0f alpha:1.0f] colorWithAlphaComponent:CSToastOpacity];
+    wrapperView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:CSToastOpacity];
     //wrapperView.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:CSToastOpacity];
     
     if(image != nil) {
