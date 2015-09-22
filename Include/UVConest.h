@@ -31,13 +31,18 @@
 #define UV_PATH_CACHE_WITH_NAME(name_) [(NSString*)([NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]) stringByAppendingPathComponent:name_]
 
 //缓存目录
-#define UV_PATH_CACHE (NSString*)(NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0)
+#define UV_PATH_CACHE (NSString*)[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 //主目录
 #define UV_PATH_HOME_WITH_NAME(name_) [NSHomeDirectory() stringByAppendingPathComponent:name_]
 
 //当前IOS版本
 #define UV_IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define UV_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define UV_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 //读取语言
 #define L(key) NSLocalizedString(key,nil)
 //日期格式
