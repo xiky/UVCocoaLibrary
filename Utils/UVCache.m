@@ -51,11 +51,23 @@
     NSString *full = [path stringByAppendingPathComponent:filename];
     if([m fileExistsAtPath:full])
     {
-        if(finish_ != nil)
+        //判断文件是否有效
+        NSError *error;
+        NSDictionary *attr = [m attributesOfItemAtPath:full error:&error];
+        if(error == nil)
         {
-            finish_(nil,full);
+            NSNumber  *size = attr[NSFileSize];
+            if(size.floatValue > 0)
+            {
+                if(finish_ != nil)
+                {
+                    finish_(nil,full);
+                }
+                return;
+            }
         }
-        return;
+        //无效文件 尝试删除
+        [m removeItemAtPath:full error:&error];
     }
    
 

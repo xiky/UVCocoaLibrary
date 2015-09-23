@@ -38,6 +38,11 @@
 
 //当前IOS版本
 #define UV_IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define UV_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define UV_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 //读取语言
 #define L(key) NSLocalizedString(key,nil)
 //日期格式
