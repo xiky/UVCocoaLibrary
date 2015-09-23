@@ -31,7 +31,7 @@
 #define UV_PATH_CACHE_WITH_NAME(name_) [(NSString*)([NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]) stringByAppendingPathComponent:name_]
 
 //缓存目录
-#define UV_PATH_CACHE (NSString*)(NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0)
+#define UV_PATH_CACHE (NSString*)[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 //主目录
 #define UV_PATH_HOME_WITH_NAME(name_) [NSHomeDirectory() stringByAppendingPathComponent:name_]
