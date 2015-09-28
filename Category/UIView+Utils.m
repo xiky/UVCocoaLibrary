@@ -128,4 +128,28 @@ static char kActionHandlerTapBlockKey;
     self.layer.cornerRadius = radius_;
     self.layer.masksToBounds = YES;
 }
+
+- (void)uv_strokeWithColor:(UIColor*)color_ lineDashPattern:(NSArray *)dash_
+{
+    if(!dash_)
+    {
+        dash_ = @[@4, @2];
+    }
+    
+    if(!color_)
+    {
+        color_ = [UIColor colorWithRed:102.f/255.f green:102.f/255.f blue:102.f/255.f alpha:1.f];
+    }
+    
+    CAShapeLayer *_border = [CAShapeLayer layer];
+    _border.strokeColor = color_.CGColor;
+    _border.fillColor = nil;
+    _border.lineDashPattern = dash_;
+    _border.masksToBounds = self.layer.masksToBounds;
+    _border.cornerRadius = self.layer.cornerRadius;
+    [self.layer addSublayer:_border];
+    
+    _border.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    _border.frame = self.bounds;
+}
 @end

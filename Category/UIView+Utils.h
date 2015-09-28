@@ -56,7 +56,19 @@
 - (UIView *)showBadgeValue:(NSString *)strBadgeValue;
 
 
-//设置视图圆角
+/**
+ *  设置视图圆角
+ *
+ *  @param radius_ 圆角大小
+ */
 - (void)makeCornerRadius:(CGFloat)radius_;
+
+/**
+ *  给View增加虚线
+ *
+ *  @param color_ 虚线颜色 默认为 #666666
+ *  @param dash_  虚线宽度和间隔 为数字数组 默认为 @[@4, @2]
+ */
+- (void)uv_strokeWithColor:(UIColor*)color_ lineDashPattern:(NSArray *)dash_;
 
 @end
