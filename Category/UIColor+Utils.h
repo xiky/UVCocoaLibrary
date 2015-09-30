@@ -16,5 +16,5 @@
  * @param NSString inColorString 十六制颜色 如cccccc
  * @return UIColor 返回UIColor
  */
-+ (UIColor *) colorFromHexRGB:(NSString *) inColorString;
++ (UIColor *) uv_colorFromHexRGB:(NSString *) inColorString;
 @end

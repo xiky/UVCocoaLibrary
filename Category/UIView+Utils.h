@@ -13,7 +13,7 @@
 /**
  * 删除所有子视图
  */
--(void)removeAllSubView;
+-(void)uv_removeAllSubView;
 /**
  * 使用Block向视图添加点击事件 
  *
@@ -39,12 +39,8 @@
  * 移除添加的点击事件
  *
  */
-- (void)removeClickWithBlockAndSel;
-/**
- * 设置当前视图的背景图片 注：不能重复设置
- * @param UIImage image_ 要设置的图片
- */
-- (void)setBackgroundImage:(UIImage *)image_;
+- (void)uv_removeClickWithBlockAndSel;
+
 
 /**
  *  显示一个类型Tab的Badge值
@@ -53,7 +49,7 @@
  *
  *  @return Badge对象
  */
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue;
+- (UIView *)uv_showBadgeValue:(NSString *)strBadgeValue;
 
 
 /**

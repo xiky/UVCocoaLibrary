@@ -15,7 +15,7 @@ static char kActionHandlerTapBlockKey;
 
 @implementation UIView (Utils)
 
--(void)removeAllSubView
+-(void)uv_removeAllSubView
 {
     for(UIView *view in self.subviews)
     {
@@ -48,7 +48,7 @@ static char kActionHandlerTapBlockKey;
     return gesture;
 }
 
-- (void)removeClickWithBlockAndSel
+- (void)uv_removeClickWithBlockAndSel
 {
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerTapGestureKey);
     if(!gesture)
@@ -74,15 +74,9 @@ static char kActionHandlerTapBlockKey;
 		}
 	}
 }
-- (void)setBackgroundImage:(UIImage *)image_
-{
-    UIImageView *view = [[UIImageView alloc] initWithImage:image_];
-    view.frame = CGRectMake(0.f, 0.f, self.frame.size.width, self.frame.size.height);
-    [self addSubview:view];
-    [self sendSubviewToBack:view];
-}
 
-- (UIView *)showBadgeValue:(NSString *)strBadgeValue
+
+- (UIView *)uv_showBadgeValue:(NSString *)strBadgeValue
 {
     UITabBar *tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"" image:nil tag:0];

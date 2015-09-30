@@ -29,6 +29,8 @@
 		7F823AB91B9FC8C800B1F68D /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AAD1B9FC8C800B1F68D /* XMLReader.m */; };
 		814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D11B5739D600A96FDC /* UVDevice.m */; };
 		814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D31B5739D600A96FDC /* UVLogger.m */; };
+		8161ED141BBB81C6003BC918 /* UVScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8161ED131BBB81C6003BC918 /* UVScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		8161ED171BBB898A003BC918 /* UVPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8161ED161BBB898A003BC918 /* UVPageScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		991FA95C18CEB551007024CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA95B18CEB551007024CB /* Foundation.framework */; };
 		991FA96A18CEB551007024CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA96918CEB551007024CB /* XCTest.framework */; };
 		991FA96B18CEB551007024CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FA95B18CEB551007024CB /* Foundation.framework */; };
@@ -185,6 +187,10 @@
 		814FD2D11B5739D600A96FDC /* UVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVDevice.m; sourceTree = "<group>"; };
 		814FD2D21B5739D600A96FDC /* UVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVLogger.h; sourceTree = "<group>"; };
 		814FD2D31B5739D600A96FDC /* UVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVLogger.m; sourceTree = "<group>"; };
+		8161ED121BBB81C6003BC918 /* UVScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVScrollView.h; sourceTree = "<group>"; };
+		8161ED131BBB81C6003BC918 /* UVScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVScrollView.m; sourceTree = "<group>"; };
+		8161ED151BBB898A003BC918 /* UVPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVPageScrollView.h; sourceTree = "<group>"; };
+		8161ED161BBB898A003BC918 /* UVPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVPageScrollView.m; sourceTree = "<group>"; };
 		991FA95818CEB551007024CB /* libUVCocoaLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUVCocoaLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		991FA95B18CEB551007024CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		991FA95F18CEB551007024CB /* UVCocoaLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UVCocoaLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -490,6 +496,10 @@
 				99B4001B193D9851002224A5 /* UVActivityIndicatorView.m */,
 				99C8F95D192B4440007EFFC1 /* UVMenuButton.h */,
 				99C8F95E192B4440007EFFC1 /* UVMenuButton.m */,
+				8161ED121BBB81C6003BC918 /* UVScrollView.h */,
+				8161ED131BBB81C6003BC918 /* UVScrollView.m */,
+				8161ED151BBB898A003BC918 /* UVPageScrollView.h */,
+				8161ED161BBB898A003BC918 /* UVPageScrollView.m */,
 			);
 			path = Widget;
 			sourceTree = SOURCE_ROOT;
@@ -654,12 +664,14 @@
 				7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */,
 				99C8F97B192B4667007EFFC1 /* UVIdEntity.m in Sources */,
 				7F823AB91B9FC8C800B1F68D /* XMLReader.m in Sources */,
+				8161ED141BBB81C6003BC918 /* UVScrollView.m in Sources */,
 				99C8F958192B4337007EFFC1 /* UIView+Utils.m in Sources */,
 				99B4001C193D9851002224A5 /* UVActivityIndicatorView.m in Sources */,
 				99C8F97C192B4667007EFFC1 /* UVTables.m in Sources */,
 				7F823AB81B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m in Sources */,
 				99C8F957192B4337007EFFC1 /* UIView+Shake.m in Sources */,
 				814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */,
+				8161ED171BBB898A003BC918 /* UVPageScrollView.m in Sources */,
 				99C8F97A192B4667007EFFC1 /* UVFMDatabase.m in Sources */,
 				7F823AB11B9FC8C800B1F68D /* FMDatabaseQueue.m in Sources */,
 				99C8F982192B4667007EFFC1 /* UVUtils.m in Sources */,

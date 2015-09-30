@@ -10,7 +10,7 @@
 
 @implementation UIColor (Utils)
 
-+ (UIColor *) colorFromHexRGB:(NSString *) inColorString
++ (UIColor *) uv_colorFromHexRGB:(NSString *) inColorString
 {
     UIColor *result = nil;
     unsigned int colorCode = 0;
