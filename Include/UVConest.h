@@ -135,6 +135,6 @@ blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
  *
  *  @return NSString
  */
-#define UV_DateFormat         @"yyyy-MM-dd HH:mm:ss"
+#define UV_DEFAULT_DATEFORMAT @"yyyy-MM-dd HH:mm:ss"
 
 #endif

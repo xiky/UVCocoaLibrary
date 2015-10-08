@@ -17,6 +17,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  在UIActivityIndicatorView视图中显示百分比数字
+ */
 @interface UVActivityIndicatorView : UIActivityIndicatorView
 
 @property(nonatomic,strong,readonly) UILabel *labelText;

@@ -100,7 +100,7 @@
         [self addSubview:_labelText];
     }
     NSInteger v = progress_ * 100;
-    _labelText.text = [NSString stringWithFormat:@"%d",v];
+    _labelText.text = [NSString stringWithFormat:@"%d",(int)v];
 }
 #pragma mark - private
 
