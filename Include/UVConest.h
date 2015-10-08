@@ -43,6 +43,9 @@
 
 #define UV_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define UV_COLOR_RGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
+#define UV_COLOR_RGB_ALPHA(r,g,b,alpha) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:alpha]
+
 //读取语言
 #define L(key) NSLocalizedString(key,nil)
 //日期格式

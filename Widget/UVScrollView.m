@@ -27,10 +27,11 @@
         CGPoint buttonPoint = [view convertPoint:point fromView:self];
         if ([view pointInside:buttonPoint withEvent:event])
         {
+            self.scrollEnabled = NO;
             return view;
         }
     }
-    
+    self.scrollEnabled = YES;
     return result;
 }
 @end
