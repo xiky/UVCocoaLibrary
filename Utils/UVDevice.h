@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UVDevice : NSObject
 
++(instancetype)shareInstance;
 /**
  *  当前APP的外部版本号
  *
@@ -31,7 +33,68 @@
 /**
  *  当前设备IP地址
  *
- *  @return <#return value description#>
+ *  @return NSString
  */
 - (NSString*)getIPAddress;
+/**
+ *  基于iphone6屏幕尺寸缩放宽比例
+ *
+ *  @return CGFloat
+ */
+- (CGFloat)scaleWidth;
+
+/**
+ *  基于iphone6屏幕尺寸缩放高比例
+ *
+ *  @return CGFloat
+ */
+- (CGFloat)scaleHeight;
+/**
+ *  当前设备是否为ipad
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIpad;
+/**
+ *  当前设备是否为Iphone
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIphone;
+/**
+ *  当前设备是滞为模拟器
+ *
+ *  @return BOOL
+ */
+- (BOOL)isSimulator;
+/**
+ *  当前设备是否为iphone4
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIphone4;
+/**
+ *  当前设备类型
+ *
+ *  @return NSString
+ */
+- (NSString*)deviceName;
+/**
+ *  当前设备是否为Iphone5
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIphone5;
+/**
+ *  当前设备是否为iphone6
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIphone6;
+/**
+ *  当前设备是否为iphone6p
+ *
+ *  @return BOOL
+ */
+- (BOOL)isIphone6p;
 @end
