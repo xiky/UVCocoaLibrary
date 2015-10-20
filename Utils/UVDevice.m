@@ -231,64 +231,68 @@
 
 - (BOOL) isIphone4
 {
-    if([self isSimulator])
+    //if([self isSimulator])
     {
         CGRect bounds = [UIScreen mainScreen].bounds;
         if(bounds.size.width == 320 && bounds.size.height == 480)
         {
-            return TRUE;
+            return YES;
         }
+        return NO;
     }
-    return [[self deviceName] isEqualToString:@"iPhone4"] || [[self deviceName] isEqualToString:@"iPhone 4S"];
+//    return [[self deviceName] isEqualToString:@"iPhone4"] || [[self deviceName] isEqualToString:@"iPhone 4S"];
 }
 
 - (BOOL) isIphone5
 {
-    if([self isSimulator])
+//    if([self isSimulator])
     {
         CGRect bounds = [UIScreen mainScreen].bounds;
         if(bounds.size.width == 640 && bounds.size.height == 1136)
         {
-            return TRUE;
+            return YES;
         }
         if(bounds.size.width == 320 && bounds.size.height == 568)
         {
-            return TRUE;
+            return YES;
         }
+        return NO;
     }
-    return [[self deviceName] isEqualToString:@"iPhone5"] || [[self deviceName] isEqualToString:@"iPhone 5s"] || [[self deviceName] isEqualToString:@"iPhone 5c"];
+//    return [[self deviceName] isEqualToString:@"iPhone5"] || [[self deviceName] isEqualToString:@"iPhone 5s"] || [[self deviceName] isEqualToString:@"iPhone 5c"];
 }
 - (BOOL)isIphone6
 {
-    if([self isSimulator])
+//    if([self isSimulator])
     {
         CGRect bounds = [UIScreen mainScreen].bounds;
         if(bounds.size.width == 750 && bounds.size.height == 1334)
         {
-            return TRUE;
+            return YES;
         }
         if(bounds.size.width == 375 && bounds.size.height == 667)
         {
-            return TRUE;
+            return YES;
         }
+        return NO;
     }
-    return [[self deviceName] isEqualToString:@"iPhone6"];
+//    return [[self deviceName] isEqualToString:@"iPhone6"];
 }
 
 - (BOOL)isIphone6p
 {
-    if([self isSimulator])
+//    if([self isSimulator])
     {
         CGRect bounds = [UIScreen mainScreen].bounds;
         if(bounds.size.width == 1242 && bounds.size.height == 2208)
         {
-            return TRUE;
+            return YES;
         }
         if(bounds.size.width == 414 && bounds.size.height == 736)
         {
-            return TRUE;
+            return YES;
         }
+        return NO;
     }
-    return [[self deviceName] isEqualToString:@"iPhone 6 Plus"];
+//    return [[self deviceName] isEqualToString:@"iPhone 6 Plus"];
 }
 @end
