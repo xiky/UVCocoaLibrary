@@ -25,6 +25,7 @@
         _isShow = NO;
         _isadd = NO;
         _autoHidden = YES;
+        _animateDuration = 0.5f;
         _childView.userInteractionEnabled = YES;
         [self addSubview:_childView];
         
@@ -71,7 +72,7 @@
     _childView.hidden = NO;
     [self bringSubviewToFront:_childView];
     self.hidden = NO;
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:_animateDuration animations:^{
         CGRect frame = _childView.frame;
         frame.origin.y = self.frame.size.height - frame.size.height;
         _childView.frame = frame;
@@ -81,7 +82,7 @@
 {
     if(!_isShow)return;
     _isShow = NO;
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:_animateDuration animations:^{
         CGRect frame = _childView.frame;
         frame.origin.y = self.frame.size.height;
         _childView.frame = frame;
