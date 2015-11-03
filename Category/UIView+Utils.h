@@ -57,7 +57,7 @@
  *
  *  @param radius_ 圆角大小
  */
-- (void)makeCornerRadius:(CGFloat)radius_;
+- (void)uv_makeCornerRadius:(CGFloat)radius_;
 
 /**
  *  给View增加虚线

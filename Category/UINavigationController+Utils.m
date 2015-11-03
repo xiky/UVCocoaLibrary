@@ -15,7 +15,7 @@
 - (void)pushViewControllerByStoryboard:(NSString*)storyboard_ viewControllerIdentifier:(NSString*)identifier_
 {
     
-    UIViewController *view = [self viewControllerWithStoryboard:storyboard_ identifier:identifier_];
+    UIViewController *view = [self uv_viewControllerWithStoryboard:storyboard_ identifier:identifier_];
     NSLog(@"pushViewControllerByStoryboard:%@",view);
     [self pushViewController:view animated:YES];
 }

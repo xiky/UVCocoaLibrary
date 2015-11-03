@@ -14,18 +14,18 @@
 @implementation NSObject (UVObjects)
 
 
-- (void)iToastMessage:(NSString*)message
+- (void)uv_iToastMessage:(NSString*)message
 {
     [[[[iToast makeText:message] setGravity:iToastGravityBottom] setDuration:2000] show];
 }
-- (void)showError:(UVError*)error_
+- (void)uv_showError:(UVError*)error_
 {
     if(error_ == nil)return;
-    NSString *mess = [NSString stringWithFormat:@"%@,错误码:%d",error_.message,error_.code];
-    [self iToastMessage:mess];
+    NSString *mess = [NSString stringWithFormat:@"%@,错误码:%ld",error_.message,(long)error_.code];
+    [self uv_iToastMessage:mess];
     mess = nil;
 }
--(MBProgressHUD*)progress:(UIView *)view_ message:(NSString *)mess_
+- (MBProgressHUD*)uv_progress:(UIView *)view_ message:(NSString *)mess_
 {
     if(!view_)
     {
@@ -40,7 +40,7 @@
     return hud;
 }
 
-- (UIViewController*)viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_
+- (UIViewController*)uv_viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_
 {
     UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard_ bundle:nil];
     UIViewController *view = [story instantiateViewControllerWithIdentifier:identifier_];

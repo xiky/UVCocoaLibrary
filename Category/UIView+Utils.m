@@ -117,7 +117,7 @@ static char kActionHandlerTapBlockKey;
 }
 
 //设置视图圆角
-- (void)makeCornerRadius:(CGFloat)radius_
+- (void)uv_makeCornerRadius:(CGFloat)radius_
 {
     self.layer.cornerRadius = radius_;
     self.layer.masksToBounds = YES;

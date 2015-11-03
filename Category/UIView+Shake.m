@@ -10,25 +10,25 @@
 
 @implementation UIView (Shake)
 
-- (void)shake:(int)times withDelta:(CGFloat)delta finish:(void (^)())finish_
+- (void)uv_shake:(int)times withDelta:(CGFloat)delta finish:(void (^)())finish_
 {
-	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:0.03 shakeDirection:ShakeDirectionHorizontal finish:finish_];
+	[self _uv_shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:0.03 shakeDirection:UV_SHAKE_DIRECTION_HORIZONTAL finish:finish_];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval finish:(void (^)())finish_
+- (void)uv_shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval finish:(void (^)())finish_
 {
-	[self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:ShakeDirectionHorizontal finish:finish_];
+	[self _uv_shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:UV_SHAKE_DIRECTION_HORIZONTAL finish:finish_];
 }
 
-- (void)shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection finish:(void (^)())finish_
+- (void)uv_shake:(int)times withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(UV_SHAKE_DIRECTION)shakeDirection finish:(void (^)())finish_
 {
-    [self _shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:shakeDirection finish:finish_];
+    [self _uv_shake:times direction:1 currentTimes:0 withDelta:delta andSpeed:interval shakeDirection:shakeDirection finish:finish_];
 }
 
-- (void)_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(ShakeDirection)shakeDirection finish:(void (^)())finish_
+- (void)_uv_shake:(int)times direction:(int)direction currentTimes:(int)current withDelta:(CGFloat)delta andSpeed:(NSTimeInterval)interval shakeDirection:(UV_SHAKE_DIRECTION)shakeDirection finish:(void (^)())finish_
 {
 	[UIView animateWithDuration:interval animations:^{
-		self.transform = (shakeDirection == ShakeDirectionHorizontal) ? CGAffineTransformMakeTranslation(delta * direction, 0) : CGAffineTransformMakeTranslation(0, delta * direction);
+		self.transform = (shakeDirection == UV_SHAKE_DIRECTION_HORIZONTAL) ? CGAffineTransformMakeTranslation(delta * direction, 0) : CGAffineTransformMakeTranslation(0, delta * direction);
 	} completion:^(BOOL finished) {
 		if(current >= times)
         {
@@ -39,7 +39,7 @@
             }
 			return;
 		}
-		[self _shake:(times - 1)
+		[self _uv_shake:(times - 1)
 		   direction:direction * -1
 		currentTimes:current + 1
 		   withDelta:delta

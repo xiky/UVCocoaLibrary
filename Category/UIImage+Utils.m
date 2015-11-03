@@ -20,7 +20,7 @@
  * @params rect_ 写入文字的位置
  * @return UIImage 返回一个新的图像
  */
--(UIImage*)writeText:(NSString*)text_ font:(UIFont*)font_ rect:(CGRect)rect_
+-(UIImage*)uv_writeText:(NSString*)text_ font:(UIFont*)font_ rect:(CGRect)rect_
 {
     //NSLog(@"writetext:%@,width:%f,height:%f",text_,rect_.size.width,rect_.size.height);
     CGSize size = self.size;
@@ -47,24 +47,24 @@
     return rotatedImage;
 }
 
--(UIImage*)writeText:(NSString*)text_
+-(UIImage*)uv_writeText:(NSString*)text_
 {
     
     UIFont *font = [UIFont boldSystemFontOfSize:36.0];
-    return [self writeText:text_ font:font];
+    return [self uv_writeText:text_ font:font];
 }
--(UIImage*)writeText:(NSString*)text_ font:(UIFont*)font_
+-(UIImage*)uv_writeText:(NSString*)text_ font:(UIFont*)font_
 {
     //自适应字体
     CGSize size = [text_ sizeWithFont:font_];
     CGRect rect = CGRectMake(20, 40, size.width, size.height);
-    return [self writeText:text_ font:font_ rect:rect];
+    return [self uv_writeText:text_ font:font_ rect:rect];
 }
 
 /**
  * 存储到本地
  */
--(BOOL)saveToJpg:(NSURL*)url_
+-(BOOL)uv_saveToJpg:(NSURL*)url_
 {
     NSData *imageData = UIImageJPEGRepresentation(self, 0);
     
@@ -73,7 +73,7 @@
 }
 
 //UIImage 缩放到指定大小
-- (UIImage *)scaleToSize:(CGSize)size
+- (UIImage *)uv_scaleToSize:(CGSize)size
 {
     CGFloat width = CGImageGetWidth(self.CGImage);
     CGFloat height = CGImageGetHeight(self.CGImage);
@@ -160,7 +160,7 @@
 //    return scaledImage;
 }
 
-- (void)saveToPhotoAlbum:(void (^)(NSURL *assetURL, UVError *error))finish_;
+- (void)uv_saveToPhotoAlbum:(void (^)(NSURL *assetURL, UVError *error))finish_;
 {
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     
@@ -181,7 +181,7 @@
     
 }
 
-+ (UIImage *) createImageWithColor: (UIColor *) color
++ (UIImage *) uv_imageWithColor: (UIColor *) color
 {
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
@@ -194,7 +194,7 @@
     return theImage;
 }
 
-+ (UIImage *) createImageWithGradient:(CGRect)rectArea colorStart:(UIColor*) startColor colorEnd:(UIColor*)endColor
++ (UIImage *) uv_imageWithGradient:(CGRect)rectArea colorStart:(UIColor*) startColor colorEnd:(UIColor*)endColor
 {
     CGRect rect = rectArea;
     UIGraphicsBeginImageContext(rect.size);
@@ -236,33 +236,8 @@
     return theImage;
 }
 
-- (UIImage *)tintedImageWithColor:(UIColor *)tintColor
-{
-    return [self tintedImageWithColor:tintColor blendingMode:kCGBlendModeDestinationIn];
-}
 
-- (UIImage *)tintedGradientImageWithColor:(UIColor *)tintColor
-{
-    return [self tintedImageWithColor:tintColor blendingMode:kCGBlendModeOverlay];
-}
-
-#pragma mark - Private methods
-
-- (UIImage *)tintedImageWithColor:(UIColor *)tintColor blendingMode:(CGBlendMode)blendMode
-{
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
-    [tintColor setFill];
-    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
-    UIRectFill(bounds);
-    [self drawInRect:bounds blendMode:blendMode alpha:1.0f];
-    
-    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return tintedImage;
-}
-
--(BOOL)saveToPng:(NSURL*)url_
+-(BOOL)uv_saveToPng:(NSURL*)url_
 {
     NSData *imageData = UIImagePNGRepresentation(self);
     
@@ -270,7 +245,7 @@
     return result;
 }
 
-- (UIImage*)imageWithRemoteUrl:(NSString*)url_
+- (UIImage*)uv_imageWithRemoteUrl:(NSString*)url_
 {
     if(url_.length < 1)
     {
@@ -314,7 +289,7 @@
     }
     return [UIImage imageWithData:data];
 }
-- (void)cleanCache:(NSString*)url_
+- (void)uv_cleanCache:(NSString*)url_
 {
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
@@ -334,7 +309,7 @@
     }
 }
 
-- (BOOL)isCache:(NSString*)url_
+- (BOOL)uv_isCache:(NSString*)url_
 {
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];

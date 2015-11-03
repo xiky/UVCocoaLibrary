@@ -13,5 +13,5 @@
 /**
  * 设置表格视图下面多余的cell隐藏
  */
-- (void)setExtraCellLineHidden;
+- (void)uv_setExtraCellLineHidden;
 @end

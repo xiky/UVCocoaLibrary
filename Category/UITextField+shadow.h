@@ -10,12 +10,12 @@
 
 @interface UITextField (shadow)
 
-- (void)addCursorBorder:(UIColor*)color;
+- (void)uv_addCursorBorder:(UIColor*)color;
 
 /**
  *  使用自定义的背景
  *
  *  @param image_ 自定义的背景图片
  */
-- (void)applyCustomBackground:(UIImage*)image_;
+- (void)uv_applyCustomBackground:(UIImage*)image_;
 @end

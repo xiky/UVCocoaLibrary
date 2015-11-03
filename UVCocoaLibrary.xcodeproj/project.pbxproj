@@ -46,9 +46,7 @@
 		99B4001D193D9873002224A5 /* UVActivityIndicatorView.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99B4001A193D9851002224A5 /* UVActivityIndicatorView.h */; };
 		99C8F950192B4337007EFFC1 /* NSObject+UVObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F93B192B4337007EFFC1 /* NSObject+UVObjects.m */; };
 		99C8F951192B4337007EFFC1 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F93F192B4337007EFFC1 /* UIColor+Utils.m */; };
-		99C8F952192B4337007EFFC1 /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F941192B4337007EFFC1 /* UIDevice+Resolutions.m */; };
 		99C8F953192B4337007EFFC1 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F943192B4337007EFFC1 /* UIImage+Utils.m */; };
-		99C8F954192B4337007EFFC1 /* UIPickerView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F945192B4337007EFFC1 /* UIPickerView+Utils.m */; };
 		99C8F955192B4337007EFFC1 /* UITableView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F947192B4337007EFFC1 /* UITableView+Utils.m */; };
 		99C8F956192B4337007EFFC1 /* UITextField+shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F949192B4337007EFFC1 /* UITextField+shadow.m */; };
 		99C8F957192B4337007EFFC1 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8F94B192B4337007EFFC1 /* UIView+Shake.m */; };
@@ -78,9 +76,7 @@
 		99C8F98F192B4F00007EFFC1 /* NSObject+UVObjects.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F93A192B4337007EFFC1 /* NSObject+UVObjects.h */; };
 		99C8F990192B4F00007EFFC1 /* operationbox_text@2x.png in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F93C192B4337007EFFC1 /* operationbox_text@2x.png */; };
 		99C8F991192B4F00007EFFC1 /* UIColor+Utils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F93E192B4337007EFFC1 /* UIColor+Utils.h */; };
-		99C8F992192B4F00007EFFC1 /* UIDevice+Resolutions.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F940192B4337007EFFC1 /* UIDevice+Resolutions.h */; };
 		99C8F993192B4F00007EFFC1 /* UIImage+Utils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F942192B4337007EFFC1 /* UIImage+Utils.h */; };
-		99C8F994192B4F00007EFFC1 /* UIPickerView+Utils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F944192B4337007EFFC1 /* UIPickerView+Utils.h */; };
 		99C8F995192B4F00007EFFC1 /* UITableView+Utils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F946192B4337007EFFC1 /* UITableView+Utils.h */; };
 		99C8F996192B4F00007EFFC1 /* UITextField+shadow.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F948192B4337007EFFC1 /* UITextField+shadow.h */; };
 		99C8F997192B4F00007EFFC1 /* UIView+Shake.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 99C8F94A192B4337007EFFC1 /* UIView+Shake.h */; };
@@ -124,9 +120,7 @@
 				99C8F98F192B4F00007EFFC1 /* NSObject+UVObjects.h in Copy Files */,
 				99C8F990192B4F00007EFFC1 /* operationbox_text@2x.png in Copy Files */,
 				99C8F991192B4F00007EFFC1 /* UIColor+Utils.h in Copy Files */,
-				99C8F992192B4F00007EFFC1 /* UIDevice+Resolutions.h in Copy Files */,
 				99C8F993192B4F00007EFFC1 /* UIImage+Utils.h in Copy Files */,
-				99C8F994192B4F00007EFFC1 /* UIPickerView+Utils.h in Copy Files */,
 				99C8F995192B4F00007EFFC1 /* UITableView+Utils.h in Copy Files */,
 				99C8F996192B4F00007EFFC1 /* UITextField+shadow.h in Copy Files */,
 				99C8F997192B4F00007EFFC1 /* UIView+Shake.h in Copy Files */,
@@ -221,12 +215,8 @@
 		99C8F93D192B4337007EFFC1 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		99C8F93E192B4337007EFFC1 /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
 		99C8F93F192B4337007EFFC1 /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
-		99C8F940192B4337007EFFC1 /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
-		99C8F941192B4337007EFFC1 /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
 		99C8F942192B4337007EFFC1 /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		99C8F943192B4337007EFFC1 /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
-		99C8F944192B4337007EFFC1 /* UIPickerView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Utils.h"; sourceTree = "<group>"; };
-		99C8F945192B4337007EFFC1 /* UIPickerView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Utils.m"; sourceTree = "<group>"; };
 		99C8F946192B4337007EFFC1 /* UITableView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Utils.h"; sourceTree = "<group>"; };
 		99C8F947192B4337007EFFC1 /* UITableView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Utils.m"; sourceTree = "<group>"; };
 		99C8F948192B4337007EFFC1 /* UITextField+shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+shadow.h"; sourceTree = "<group>"; };
@@ -460,12 +450,8 @@
 				99C8F93D192B4337007EFFC1 /* readme.txt */,
 				99C8F93E192B4337007EFFC1 /* UIColor+Utils.h */,
 				99C8F93F192B4337007EFFC1 /* UIColor+Utils.m */,
-				99C8F940192B4337007EFFC1 /* UIDevice+Resolutions.h */,
-				99C8F941192B4337007EFFC1 /* UIDevice+Resolutions.m */,
 				99C8F942192B4337007EFFC1 /* UIImage+Utils.h */,
 				99C8F943192B4337007EFFC1 /* UIImage+Utils.m */,
-				99C8F944192B4337007EFFC1 /* UIPickerView+Utils.h */,
-				99C8F945192B4337007EFFC1 /* UIPickerView+Utils.m */,
 				99C8F946192B4337007EFFC1 /* UITableView+Utils.h */,
 				99C8F947192B4337007EFFC1 /* UITableView+Utils.m */,
 				99C8F948192B4337007EFFC1 /* UITextField+shadow.h */,
@@ -662,10 +648,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F823AB31B9FC8C800B1F68D /* iToast.m in Sources */,
-				99C8F954192B4337007EFFC1 /* UIPickerView+Utils.m in Sources */,
 				99C8F981192B4667007EFFC1 /* UVURLConnectionDataDelegate.m in Sources */,
 				99C8F959192B4337007EFFC1 /* UIViewController+Utils.m in Sources */,
-				99C8F952192B4337007EFFC1 /* UIDevice+Resolutions.m in Sources */,
 				7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */,
 				99C8F97B192B4667007EFFC1 /* UVIdEntity.m in Sources */,
 				7F823AB91B9FC8C800B1F68D /* XMLReader.m in Sources */,

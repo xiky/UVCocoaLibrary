@@ -9,7 +9,7 @@
 #import "UITableView+Utils.h"
 
 @implementation UITableView (Utils)
-- (void)setExtraCellLineHidden
+- (void)uv_setExtraCellLineHidden
 {
     UIView *view =[[UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];

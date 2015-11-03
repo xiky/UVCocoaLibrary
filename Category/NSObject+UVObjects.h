@@ -13,9 +13,9 @@
 /**
  * 显示提示信息
  */
-- (void)iToastMessage:(NSString*)message;
-- (MBProgressHUD*)progress:(UIView*)view_ message:(NSString*)mess;
-- (void)showError:(UVError*)error_;
+- (void)uv_iToastMessage:(NSString*)message;
+- (MBProgressHUD*)uv_progress:(UIView*)view_ message:(NSString*)mess;
+- (void)uv_showError:(UVError*)error_;
 
-- (UIViewController*)viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_;
+- (UIViewController*)uv_viewControllerWithStoryboard:(NSString*)storyboard_ identifier:(NSString*)identifier_;
 @end

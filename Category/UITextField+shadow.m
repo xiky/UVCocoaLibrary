@@ -11,7 +11,7 @@
 
 @implementation UITextField (shadow)
 
-- (void)addCursorBorder:(UIColor*)color
+- (void)uv_addCursorBorder:(UIColor*)color
 {
     if(!color)
     {
@@ -47,7 +47,7 @@
 
 }
 
-- (void)applyCustomBackground:(UIImage*)image_;
+- (void)uv_applyCustomBackground:(UIImage*)image_;
 {
     if(!image_)
     {

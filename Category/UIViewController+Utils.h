@@ -13,5 +13,5 @@
 /**
  * 在视图上增加事件 点击视图自动隐藏键盘
  */
--(void)addTapHideKeyBroard;
+-(void)uv_addTapHideKeyBroard;
 @end

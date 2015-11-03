@@ -34,13 +34,13 @@
 #pragma mark - private
 
 
--(void)addTapHideKeyBroard
+-(void)uv_addTapHideKeyBroard
 {
-    UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(uv_viewTapped:)];
     tapGr.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapGr];
 }
--(void) viewTapped:(UITapGestureRecognizer*)tapGr
+-(void)uv_viewTapped:(UITapGestureRecognizer*)tapGr
 {
     [self.view endEditing:YES];
 }

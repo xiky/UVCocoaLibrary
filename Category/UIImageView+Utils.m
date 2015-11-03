@@ -74,7 +74,7 @@
     if(data)
     {
         UIImage *image = [UIImage imageWithData:data];
-        image = [image scaleToSize:self.frame.size];
+        image = [image uv_scaleToSize:self.frame.size];
         if(image)
         {
             self.image = image;
