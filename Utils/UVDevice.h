@@ -37,7 +37,7 @@
  */
 - (NSString*)getIPAddress;
 /**
- *  基于iphone6屏幕尺寸缩放宽比例
+ *  基于iphone6屏幕尺寸缩放宽比例 由于iphone4和iphone5的宽是一样的。因此，高度比例主要参考scaleHeight
  *
  *  @return CGFloat
  */
