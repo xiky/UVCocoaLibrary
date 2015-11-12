@@ -28,12 +28,40 @@ typedef NS_ENUM(NSInteger,UV_TOOLBAR_DATEPICKER_CLICK_TYPE) {
  *  使用方法 ：UVToolbarDatepickerView *view = [[UVToolbarDatepickerView alloc] initWithParentView:self.view]   因为高度是固定的，所以不需要指定frame
  */
 @interface UVToolbarDatepickerView : UIView
+/**
+ *  时间选择后的代理
+ */
 @property (nonatomic,weak) id<UVToolbarDatepickerViewDelegate> delegate;
-@property (nonatomic,strong,readonly) NSDate *selectDate;
+/**
+ *  工具栏
+ */
 @property (nonatomic,strong,readonly) UIToolbar *toolbar;
+/**
+ *  时间选择器
+ */
 @property (nonatomic,strong,readonly) UIDatePicker *datepicker;
 
 
+/**
+ *  当前面板是否已经显示
+ */
+@property (nonatomic,assign,readonly) BOOL isShow;
+/**
+ *  初始化选中的时间
+ */
+@property (nonatomic,strong) NSDate *selectDate;
+/**
+ *  动画持续时间 默认为0.5f
+ */
+@property(nonatomic,assign) CGFloat animateDuration;
+/**
+ *  取消按钮的文本 默认为 取消
+ */
+@property (nonatomic,strong) NSString *cancelText;
+/**
+ *  确认按钮的文本 默认为 确认
+ */
+@property (nonatomic,strong) NSString *sureText;
 /**
  *  初始化到指定父视图
  *

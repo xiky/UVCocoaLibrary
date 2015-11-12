@@ -11,25 +11,34 @@
 @implementation UVToolbarDatepickerView
 {
     UIView *_parentview;
+    
+    UIBarButtonItem *_left;
+    UIBarButtonItem *_right;
 }
 
 - (void)initData
 {
-    UIView *view = self;
-    UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.f, 0.f, _parentview.frame.size.width, 44.f)];
+    _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.f, 0.f, _parentview.frame.size.width, 44.f)];
     
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onCancel:)];
+    _left = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(onCancel:)];
     UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onSure:)];
+    _right = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStylePlain target:self action:@selector(onSure:)];
     
-    [bar setItems:@[left,flex,right]];
+    [_toolbar setItems:@[_left,flex,_right]];
     
-    [view addSubview:bar];
+    [self addSubview:_toolbar];
     
-    UIDatePicker *datePicker = [ [ UIDatePicker alloc] initWithFrame:CGRectMake(0.0,44.f,view.frame.size.width,0.0)];
-    datePicker.datePickerMode = UIDatePickerModeDate;
-    datePicker.minuteInterval = 5;
-    [view addSubview:datePicker];
+    _datepicker = [ [ UIDatePicker alloc] initWithFrame:CGRectMake(0.0,44.f,_parentview.frame.size.width,0.0)];
+    _datepicker.datePickerMode = UIDatePickerModeDate;
+    _datepicker.minuteInterval = 5;
+    
+    [self addSubview:_datepicker];
+    
+    self.hidden = YES;
+    self.frame = CGRectMake(0.f, _parentview.frame.size.height, _parentview.frame.size.width, 44.f+216.f);
+    [_parentview addSubview:self];
+    _isShow = NO;
+    _animateDuration = 0.5f;
 }
 
 - (id)initWithParentView:(UIView*)view_;
@@ -37,32 +46,81 @@
     if(self = [super init])
     {
         _parentview = view_;
-        self.frame = CGRectMake(0.f, _parentview.frame.size.height, _parentview.frame.size.width, 44.f+216.f);
+        
         [self initData];
     }
     return self;
+}
+
+- (void)setCancelText:(NSString *)cancelText_
+{
+    [_left setTitle:cancelText_];
+}
+
+- (void)setSureText:(NSString *)sureText_
+{
+    [_right setTitle:sureText_];
+}
+- (void)setSelectDate:(NSDate *)selectDate_
+{
+    _datepicker.date = selectDate_;
 }
 /**
  *  从底向上显示
  */
 - (void)show
 {
+    if(_isShow)
+    {
+        return;
+    }
     
+    self.hidden = NO;
+    [UIView animateWithDuration:_animateDuration animations:^{
+        CGRect frame = self.frame;
+        frame.origin.y = _parentview.frame.size.height - frame.size.height;
+        self.frame = frame;
+        _isShow = YES;
+    }];
 }
 /**
  *  隐藏
  */
 - (void)hide
 {
+    if(!_isShow)
+    {
+        return;
+    }
     
+    _isShow = NO;
+    [UIView animateWithDuration:_animateDuration animations:^{
+        CGRect frame = self.frame;
+        frame.origin.y = _parentview.frame.size.height;
+        self.frame = frame;
+        
+    } completion:^(BOOL finished) {
+        self.hidden = YES;
+    }];
 }
 - (void)onCancel:(id)sender_
 {
-    
+    [self hide];
+    [self triggerEvent:UV_TOOLBAR_DATEPICKER_CLICK_TYPE_CANCEL];
 }
 
 - (void)onSure:(id)sender_
 {
+    [self hide];
+    [self triggerEvent:UV_TOOLBAR_DATEPICKER_CLICK_TYPE_SURE];
+}
+
+- (void)triggerEvent:(UV_TOOLBAR_DATEPICKER_CLICK_TYPE)type_
+{
     
+    if(_delegate && [_delegate respondsToSelector:@selector(onToolbarDatepickerViewChange:type:selectDate:)])
+    {
+        [_delegate onToolbarDatepickerViewChange:self type:type_ selectDate:_datepicker.date];
+    }
 }
 @end
