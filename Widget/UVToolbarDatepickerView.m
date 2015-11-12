@@ -74,13 +74,12 @@
     {
         return;
     }
-    
+    _isShow = YES;
     self.hidden = NO;
     [UIView animateWithDuration:_animateDuration animations:^{
         CGRect frame = self.frame;
         frame.origin.y = _parentview.frame.size.height - frame.size.height;
         self.frame = frame;
-        _isShow = YES;
     }];
 }
 /**
