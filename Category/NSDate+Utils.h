@@ -11,4 +11,13 @@
 @interface NSDate (Utils)
 
 - (NSString*)stringBYFmt:(NSString*)fmt_;
+/**
+ *  <#Description#>
+ *
+ *  @param fmt_  <#fmt_ description#>
+ *  @param time_ 时区 如 Asia/Shanghai
+ *
+ *  @return <#return value description#>
+ */
+- (NSString*)stringBYFmt:(NSString *)fmt_ timeZone:(NSString*)time_;
 @end
