@@ -7,6 +7,8 @@
 //
 
 #import "NSString+UVUtils.h"
+
+
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (UVUtils)
@@ -49,5 +51,13 @@
     
     
     return output;
+}
+
+- (CGSize)sizeByFont:(UIFont*)font_ maxSize:(CGSize)size_
+{
+    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font_,NSFontAttributeName,nil];
+    // ios 7
+    CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    return sizeText;
 }
 @end

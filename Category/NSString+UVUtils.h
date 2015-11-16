@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface NSString (UVUtils)
 
@@ -23,4 +24,6 @@
 /**
  */
 - (NSString*)sha256passwd;
+
+- (CGSize)sizeByFont:(UIFont*)font_ maxSize:(CGSize)size_;
 @end
