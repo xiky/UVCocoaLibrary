@@ -28,7 +28,7 @@
     
     [self addSubview:_toolbar];
     
-    _datepicker = [ [ UIDatePicker alloc] initWithFrame:CGRectMake(0.0,44.f,_parentview.frame.size.width,0.0)];
+    _datepicker = [ [ UIDatePicker alloc] initWithFrame:CGRectMake(0.0,44.f,_parentview.frame.size.width,216.f)];
     _datepicker.datePickerMode = UIDatePickerModeDate;
     _datepicker.minuteInterval = 5;
     
