@@ -235,7 +235,7 @@ void InitCrashReport()
     _sockfd = socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
     if(_sockfd < 0)
     {
-        NSString *msg = [NSString stringWithFormat:@"open socket failure,ip:%@,port:%ld",_server,_port];
+        NSString *msg = [NSString stringWithFormat:@"open socket failure,ip:%@,port:%ld",_server,(long)_port];
         [self print:msg];
         return NO;
     }

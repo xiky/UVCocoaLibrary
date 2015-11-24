@@ -35,7 +35,7 @@ typedef void (^startProgress)(NSError *error);
  */
 +(UVRequest*)instance;
 
-- (void)progress:(void (^)(UIView *view_, NSString *message_))start_ end:(void (^)())end_;
+//- (void)progress:(void (^)(UIView *view_, NSString *message_))start_ end:(void (^)())end_;
 
 
 /** 发送异步请求
