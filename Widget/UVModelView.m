@@ -20,7 +20,8 @@
         
         _childView = view_;
         self.backgroundColor = [UIColor grayColor];
-        self.alpha = 0.7f;
+        
+        self.alpha = 0.9f;
         self.userInteractionEnabled = YES;
         _isShow = NO;
         _isadd = NO;
