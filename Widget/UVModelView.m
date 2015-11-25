@@ -28,7 +28,7 @@
         _autoHidden = YES;
         _animateDuration = 0.5f;
         _childView.userInteractionEnabled = YES;
-        [self addSubview:_childView];
+        //[self addSubview:_childView];
         
     }
     return self;
@@ -57,6 +57,7 @@
     }
 
     [view_ addSubview:self];
+    [view_ addSubview:self.childView];
     _isadd = YES;
 
     CGRect frame = view_.frame;
@@ -90,6 +91,7 @@
         
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
+        [self.childView removeFromSuperview];
         [self triggerHide];
     }];
 }
