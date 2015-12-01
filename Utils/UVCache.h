@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 @class UVError;
-
+@protocol UVHttpClientDelegate;
 /**
  *  缓存封装类 指定一个URL，将URL的二进制文件内容下载到沙盘Cache目录下 使用URL进行MD5后做为文件名。因此可判断文件是否已经缓存过
  */
 @interface UVCache : NSObject
-
-
+/**
+ *  下载进度回调
+ */
+@property (nonatomic,weak) id<UVHttpClientDelegate> delegate;
 /**
  *  缓存目录 默认为UVCache
  */

@@ -72,7 +72,7 @@
    
 
     UVHttpClient *client = [[UVHttpClient alloc] init];
-    
+    client.delegate = _delegate;
     [client download:[NSURL URLWithString:url_] save:full finish:^(NSError *error_) {
         if(error_ != nil)
         {
