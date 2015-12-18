@@ -8,6 +8,7 @@
 
 #import "UVDevice.h"
 #import "UVConest.h"
+#include <netdb.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <sys/utsname.h>
@@ -141,6 +142,16 @@
     freeifaddrs(interfaces);
     return address;
 }
+
+- (NSString *)getIPAddressForHost:(NSString *)theHost_
+{
+    struct hostent *host = gethostbyname([theHost_ UTF8String]);
+    if (!host) {return nil; }
+    struct in_addr **list = (struct in_addr **)host->h_addr_list;
+    NSString *addressString = [NSString stringWithCString:inet_ntoa(*list[0]) encoding:NSUTF8StringEncoding];
+    return addressString;
+}
+
 - (CGFloat)scaleWidth
 {
     CGFloat scaleWidth = UV_SCREEN_WIDTH / 375.f;

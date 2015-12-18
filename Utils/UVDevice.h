@@ -36,6 +36,16 @@
  *  @return NSString
  */
 - (NSString*)getIPAddress;
+
+/**
+ *  根据域名获取对方主机的IP
+ *
+ *  @param theHost 如 www.163.com
+ *
+ *  @return 获取失败返回 nil，否则返回真实的IP
+ */
+- (NSString *)getIPAddressForHost:(NSString *)theHost_;
+
 /**
  *  基于iphone6屏幕尺寸缩放宽比例 由于iphone4和iphone5的宽是一样的。因此，高度比例主要参考scaleHeight
  *
