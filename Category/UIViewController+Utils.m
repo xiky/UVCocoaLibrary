@@ -40,6 +40,17 @@
     tapGr.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapGr];
 }
+
+- (void)uv_setCustomLeftButtom:(UIBarButtonItem*)item_
+{
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:self action:nil];
+    negativeSpacer.width = -8.f;
+    self.navigationItem.leftBarButtonItems = @[negativeSpacer,item_];
+}
+
+#pragma mark - private
 -(void)uv_viewTapped:(UITapGestureRecognizer*)tapGr
 {
     [self.view endEditing:YES];
