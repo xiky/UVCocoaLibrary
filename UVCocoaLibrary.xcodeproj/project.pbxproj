@@ -29,6 +29,7 @@
 		7F823AB81B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AAA1B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m */; };
 		7F823AB91B9FC8C800B1F68D /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AAD1B9FC8C800B1F68D /* XMLReader.m */; };
 		7FCB28F91BF2105000F4C291 /* UVFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB28F81BF2105000F4C291 /* UVFileManage.m */; };
+		7FDDDDFC1C2ABCDB00294AD9 /* UVTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDDDFB1C2ABCDB00294AD9 /* UVTableView.m */; };
 		814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D11B5739D600A96FDC /* UVDevice.m */; };
 		814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 814FD2D31B5739D600A96FDC /* UVLogger.m */; };
 		8161ED141BBB81C6003BC918 /* UVScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8161ED131BBB81C6003BC918 /* UVScrollView.m */; };
@@ -183,6 +184,8 @@
 		7F823AAD1B9FC8C800B1F68D /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		7FCB28F71BF2105000F4C291 /* UVFileManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVFileManage.h; sourceTree = "<group>"; };
 		7FCB28F81BF2105000F4C291 /* UVFileManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVFileManage.m; sourceTree = "<group>"; };
+		7FDDDDFA1C2ABCDB00294AD9 /* UVTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVTableView.h; sourceTree = "<group>"; };
+		7FDDDDFB1C2ABCDB00294AD9 /* UVTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVTableView.m; sourceTree = "<group>"; };
 		814FD2D01B5739D600A96FDC /* UVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVDevice.h; sourceTree = "<group>"; };
 		814FD2D11B5739D600A96FDC /* UVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVDevice.m; sourceTree = "<group>"; };
 		814FD2D21B5739D600A96FDC /* UVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVLogger.h; sourceTree = "<group>"; };
@@ -482,6 +485,8 @@
 		99C8F95C192B4440007EFFC1 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				7FDDDDFA1C2ABCDB00294AD9 /* UVTableView.h */,
+				7FDDDDFB1C2ABCDB00294AD9 /* UVTableView.m */,
 				7F00E1201BE1F310006AFE9F /* UVModelView.h */,
 				7F00E1211BE1F310006AFE9F /* UVModelView.m */,
 				99B4001A193D9851002224A5 /* UVActivityIndicatorView.h */,
@@ -679,6 +684,7 @@
 				814FD2D41B5739D600A96FDC /* UVDevice.m in Sources */,
 				99D2ACBA19F49C30006167AC /* UVSoap.m in Sources */,
 				7F823AB41B9FC8C800B1F68D /* README.md in Sources */,
+				7FDDDDFC1C2ABCDB00294AD9 /* UVTableView.m in Sources */,
 				7F823AAF1B9FC8C800B1F68D /* FMDatabaseAdditions.m in Sources */,
 				7F0D50181B8D8A8B0017359F /* NSString+UVUtils.m in Sources */,
 				99C8F95F192B4440007EFFC1 /* UVMenuButton.m in Sources */,
