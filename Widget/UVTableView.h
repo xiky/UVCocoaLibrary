@@ -24,6 +24,7 @@ typedef void (^errorViewClickListener)(UVTableView *tableView, UV_TABLEVIEW_TYPE
 
 
 @interface UVTableView : UITableView
+
 /**
  *  数据为空视图
  */

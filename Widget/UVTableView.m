@@ -51,6 +51,7 @@
     if(_emptyView == nil)return;
     if(status_)
     {
+        if(!_emptyView.hidden)return;
         [_emptyView setHidden:NO];
         if(self.separatorStyle != UITableViewCellSeparatorStyleNone)
         {
@@ -60,6 +61,7 @@
     }
     else
     {
+        if(_emptyView.hidden)return;
         [_emptyView setHidden:YES];
         if(_oldSepStyle != UITableViewCellSeparatorStyleNone)
         {
