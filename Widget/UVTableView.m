@@ -7,17 +7,47 @@
 //
 
 #import "UVTableView.h"
+#import "UVDevice.h"
 
 @interface UVTableView ()
+/**
+ *  保存原来的cell分隔线
+ */
 @property (nonatomic,assign) UITableViewCellSeparatorStyle oldSepStyle;
 @end
 
 @implementation UVTableView
 - (void)initData
 {
-    _autoShowEmptyView = YES;
-    _isLoading = NO;
-    _isFailured = NO;
+    _status = UV_TABLEVIEW_STATUS_IDLE;
+    
+    UVDevice *device = [UVDevice new];
+    _statusView = [UIView new];
+    
+    _topMargin = 130.f * device.scaleHeight;
+    
+    _imageviewStatus = [[UIImageView alloc] init];
+    [_statusView addSubview:_imageviewStatus];
+    
+    _lblStatus = [UILabel new];
+    _lblStatus.textAlignment = NSTextAlignmentCenter;
+    _lblStatus.textColor = [UIColor colorWithRed:153.0/255.0f green:153.0/255.0f blue:153.0/255.0f alpha:1.0f];
+    _lblStatus.font = [UIFont systemFontOfSize:16.f];
+    [_statusView addSubview:_lblStatus];
+    
+    _lblStatusDetail = [UILabel new];
+    _lblStatusDetail.textAlignment = NSTextAlignmentCenter;
+    _lblStatusDetail.textColor = [UIColor colorWithRed:153.0/255.0f green:153.0/255.0f blue:153.0/255.0f alpha:1.0f];
+    _lblStatusDetail.font = [UIFont systemFontOfSize:14.0f];
+    [_statusView addSubview:_lblStatusDetail];
+    
+    [self addSubview:_statusView];
+    
+    _statusView.userInteractionEnabled = YES;
+    _statusView.hidden = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onStatusViewTap:)];
+    [_statusView addGestureRecognizer:tap];
 }
 #pragma mark - rewrite
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -44,132 +74,79 @@
     }
     return self;
 }
-- (void)reloadData
+- (void)layoutSubviews
 {
-    [super reloadData];
-    //不是自动显示空视图 或 当前已经标识加载失败了，则不处理
-    if(!_autoShowEmptyView || _isFailured)return;
+    [super layoutSubviews];
+    
 
-    BOOL empty = [self emptyDataByTableview];
-    [self showEmptyView:empty];
+    [self updateFrame];
+}
+
+- (void)updateFrame
+{
+    UVDevice *device = [UVDevice new];
+    CGSize imageSize = CGSizeMake(160.f * device.scaleHeight, 160.f * device.scaleHeight);
+    if(_imageviewStatus.image != nil)
+    {
+        imageSize = CGSizeMake(_imageviewStatus.image.size.width * device.scaleHeight, _imageviewStatus.image.size.height * device.scaleHeight);
+    }
+    
+    
+    CGFloat viewWidth = self.frame.size.width;
+    //当然图片的高度 + 20 间距 + 20 文本的高度 + 10间距 + 20详细文本高度
+    CGFloat h = imageSize.height + 20.f + 20.f + 10.f + 20.f;
+    CGFloat x = 0;
+    CGFloat y = _topMargin;
+    CGFloat w = viewWidth;
+    
+    CGRect frame = CGRectMake(x, y, w, h);
+    self.statusView.frame = frame;
+    
+    w = imageSize.width;
+    h = imageSize.height;
+    x = (viewWidth - w) / 2.f;
+    y = 0;
+    frame = CGRectMake(x, y, w, h);
+    _imageviewStatus.frame = frame;
+    
+    y = h + 20.f;
+    w = viewWidth;
+    h = 20.f;
+    x = 0.f;
+    frame = CGRectMake(x, y, w, h);
+    _lblStatus.frame = frame;
+    
+    y = y + h + 10.f;
+    frame = CGRectMake(x, y, w, h);
+    _lblStatusDetail.frame = frame;
 }
 
 #pragma mark - public
-- (void)setEmptyView:(UIView *)emptyView_
-{
-    if(_emptyView != nil)
-    {
-        [_emptyView removeFromSuperview];
-    }
-    _emptyView = emptyView_;
-    
-    _emptyView.userInteractionEnabled = YES;
-    _emptyView.hidden = YES;
-    [self addSubview:_emptyView];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onEmptyViewTap:)];
-    [_emptyView addGestureRecognizer:tap];
-}
 
-- (void)setFailureView:(UIView *)failureView_
-{
-    if(_failureView != nil)
-    {
-        [_failureView removeFromSuperview];
-    }
-    _failureView = failureView_;
-    _failureView.hidden = YES;
-    _failureView.userInteractionEnabled = YES;
-    
-    [self addSubview:_failureView];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onFailureViewTap:)];
-    [_failureView addGestureRecognizer:tap];
-}
-
-
-- (void)showEmptyView:(BOOL)status_
+- (void)showStatusView:(BOOL)status_
 {
     //加载中 不显示空视图
-    if(_emptyView == nil)return;
+    if(_statusView == nil)return;
     if(status_)
     {
-        [self showFailureView:NO];
         //已经显示则不处理
-        if(_emptyView.hidden == NO)return;
-        [_emptyView setHidden:NO];
+        if(_statusView.hidden == NO)return;
+        [_statusView setHidden:NO];
         if(self.separatorStyle != UITableViewCellSeparatorStyleNone)
         {
             _oldSepStyle = self.separatorStyle;
             self.separatorStyle = UITableViewCellSeparatorStyleNone;
         }
-        [self scrollsToTop];
     }
     else
     {
-        if(_emptyView.hidden == YES)return;
-        [_emptyView setHidden:YES];
+        if(_statusView.hidden == YES)return;
+        [_statusView setHidden:YES];
         if(_oldSepStyle != UITableViewCellSeparatorStyleNone)
         {
             self.separatorStyle = _oldSepStyle;
         }
     }
-}
-
-- (void)showFailureView:(BOOL)status_
-{
-    if(_failureView == nil)return;
-    if(status_)
-    {
-        [self showEmptyView:NO];
-        if(_failureView.hidden == NO)return;
-        
-        [_failureView setHidden:NO];
-        if(self.separatorStyle != UITableViewCellSeparatorStyleNone)
-        {
-            _oldSepStyle = self.separatorStyle;
-            self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        }
-        [self scrollsToTop];
-    }
-    else
-    {
-        if(_failureView.hidden == YES)return;
-        [_failureView setHidden:YES];
-        if(_oldSepStyle != UITableViewCellSeparatorStyleNone)
-        {
-            self.separatorStyle = _oldSepStyle;
-        }
-    }
-}
-
-- (void)setIsLoading:(BOOL)isLoading_
-{
-    if(_isLoading == isLoading_)return;
-    _isLoading = isLoading_;
-    //加载中，则不显示空视图
-    if(_isLoading)
-    {
-        [self showEmptyView:NO];
-    }
-    
-}
-- (void)setIsFailured:(BOOL)isError_
-{
-    if(_isFailured == isError_)return;
-    _isFailured = isError_;
-    if(isError_)
-    {
-        BOOL empty = [self emptyDataByTableview];
-        if(empty)
-        {
-            [self showFailureView:YES];
-        }
-    }
-    else
-    {
-        [self showFailureView:NO];
-    }
-    
 }
 
 #pragma mark - private
@@ -205,29 +182,12 @@
 }
 
 #pragma mark - event
-- (void)onEmptyViewTap:(UIGestureRecognizer*)tap_
+
+- (void)onStatusViewTap:(UIGestureRecognizer*)tap_
 {
     if(_errorViewClickEvent != nil)
     {
-        _errorViewClickEvent(self, UV_TABLEVIEW_TYPE_EMPTY);
+        _errorViewClickEvent(self, _status);
     }
 }
-
-- (void)onFailureViewTap:(UIGestureRecognizer*)tap_
-{
-    if(_errorViewClickEvent != nil)
-    {
-        _errorViewClickEvent(self, UV_TABLEVIEW_TYPE_FAILUREVIEW);
-    }
-}
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 @end
