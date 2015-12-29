@@ -19,7 +19,10 @@
 #define REQUEST_FIELD_NAME @"name"
 //请求参数值名
 #define REQUEST_FIELD_VALUE @"value"
-
+//上传文件名
+#define UV_REQUEST_UPLOAD_FILENAME @"filename"
+//上传文件类型 如 image/png
+#define UV_REQUEST_UPLOAD_MIMETYPE @"mimetype"
 //返回数据格式
 typedef enum {
     RESPONSE_TYPE_BYTES=1,
@@ -108,7 +111,7 @@ typedef void (^finishDownListener)(NSError *error);
  
  @param NSURL url_ 请求的地址
  @param NSArray files 格式如 
-    NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<本地文件NSURL1>},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:<本地文件NSURL2>}];
+    NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<本地文件NSURL1>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"},{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<本地文件NSURL1>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"}];
  @param NSArray params 其它参数
  @param NSError error_ 如果产生错误 这里保存错误信息
  */

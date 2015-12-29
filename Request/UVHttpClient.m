@@ -160,13 +160,17 @@ static UVHttpClient *_requestinstance = nil;
     }
     //加入文件列表
     NSString *key;
-    NSURL *value;
+    NSData *value;
+    NSString *filename;
+    NSString *mimetype;
     NSMutableData *tmpData;
     for(NSDictionary *item in files_)
     {
         key  = item[REQUEST_FIELD_NAME];
         value = item[REQUEST_FIELD_VALUE];
-        tmpData = [self processFile:key path:value];
+        filename = item[UV_REQUEST_UPLOAD_FILENAME];
+        mimetype = item[UV_REQUEST_UPLOAD_MIMETYPE];
+        tmpData = [self processFile:key data:value filename:filename mimetype:mimetype];
         if(tmpData != nil)
         {
             [body appendData:tmpData];
@@ -342,43 +346,29 @@ static UVHttpClient *_requestinstance = nil;
  @param NSURL path_ 文件路径
  @return NSMutableData body_ 要加入的二进制流
  */
-- (NSMutableData*)processFile:(NSString*)name_ path:(NSURL*)path_
+- (NSMutableData*)processFile:(NSString*)key_ data:(NSData*)data_ filename:(NSString*)filename_ mimetype:(NSString*)mimeType_
 {
-    NSFileManager *file = [NSFileManager defaultManager];
-    if(![file fileExistsAtPath:path_.path])
-    {
-        file = nil;
-        NSLog(@"name_:%@,path:%@,file not exists",name_,path_);
-        return nil;
-    }
-    file = nil;
-    NSData *data = [NSData dataWithContentsOfURL:path_];
-    if(!data)
-    {
-        NSLog(@"name_:%@,path:%@,read file failure",name_,path_);
-        return nil;
-    }
+   if(data_ == nil)
+   {
+       return nil;
+   }
     NSMutableData *body = [[NSMutableData alloc] init];
     //读取文件的miniType 类似 image/png 等
-    NSString *mimeType = [self getMimeType:path_];
     NSMutableString *paramString = [[NSMutableString alloc] init];
     //添加分界线，换行
     [paramString appendFormat:@"%@\r\n",MPboundary];
     //声明pic字段，文件名为boris.png
-    [paramString appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",name_,[path_ lastPathComponent]];
+    [paramString appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",key_,filename_];
     //声明上传文件的格式
-    [paramString appendFormat:@"Content-Type: %@\r\n\r\n",mimeType];
+    [paramString appendFormat:@"Content-Type: %@\r\n\r\n",mimeType_];
     //加入字段头
     [body appendData:[paramString dataUsingEncoding:NSUTF8StringEncoding]];
     //文件内容
-    [body appendData:data];
+    [body appendData:data_];
     
     NSString *swap = [NSString stringWithFormat:@"\r\n"];
     [body appendData:[swap dataUsingEncoding:NSUTF8StringEncoding]];
     
-    data = nil;
-    paramString = nil;
-    mimeType = nil;
     return body;
 }
 - (BOOL)isTextResonseType
