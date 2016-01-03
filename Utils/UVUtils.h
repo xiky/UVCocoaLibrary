@@ -23,12 +23,6 @@
 @class UIViewController;
 @interface UVUtils : NSObject
 
-/** 返回md5加密串
- 
- @param NSString 要加密的明文串
- @return NSString 返回加密后的32位md5密文
- */
-+ (NSString *)md5passwd:(NSString*)str_;
 
 //获取最顶层的viewcontroller
 - (UIViewController *)topViewController;

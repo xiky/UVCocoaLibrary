@@ -10,12 +10,12 @@
 
 @implementation NSDate (Utils)
 
-- (NSString*)stringBYFmt:(NSString*)fmt_
+- (NSString*)uv_stringByFmt:(NSString*)fmt_
 {
-    return [self stringBYFmt:fmt_ timeZone:nil];
+    return [self uv_stringByFmt:fmt_ timeZone:nil];
 }
 
-- (NSString*)stringBYFmt:(NSString *)fmt_ timeZone:(NSString*)time_
+- (NSString*)uv_stringByFmt:(NSString *)fmt_ timeZone:(NSString*)time_
 {
     /**
      input:

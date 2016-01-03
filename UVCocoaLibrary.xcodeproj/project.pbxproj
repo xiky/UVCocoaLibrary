@@ -12,7 +12,6 @@
 		7F0D501B1B8DA94A0017359F /* UVValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D501A1B8DA94A0017359F /* UVValidate.m */; };
 		7F1498691B95890C00950789 /* UIScrollView+UVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1498681B95890C00950789 /* UIScrollView+UVUtils.m */; };
 		7F182DA21BF47CD400D55C3C /* UVToolbarDatepickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F182DA11BF47CD400D55C3C /* UVToolbarDatepickerView.m */; };
-		7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */; };
 		7F6D0CF51B731DAC00A15571 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */; };
 		7F6D0DFF1B7C9AA100A15571 /* UVCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D0DFE1B7C9AA100A15571 /* UVCache.m */; };
 		7F7C43D21BA186F900E54B4B /* NSMutableArray+UVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C43D11BA186F900E54B4B /* NSMutableArray+UVUtils.m */; };
@@ -146,8 +145,6 @@
 		7F1498681B95890C00950789 /* UIScrollView+UVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UVUtils.m"; sourceTree = "<group>"; };
 		7F182DA01BF47CD400D55C3C /* UVToolbarDatepickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVToolbarDatepickerView.h; sourceTree = "<group>"; };
 		7F182DA11BF47CD400D55C3C /* UVToolbarDatepickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UVToolbarDatepickerView.m; sourceTree = "<group>"; };
-		7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
-		7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
 		7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
 		7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
 		7F6D0DFD1B7C9AA100A15571 /* UVCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVCache.h; sourceTree = "<group>"; };
@@ -468,8 +465,6 @@
 				99C8F94D192B4337007EFFC1 /* UIView+Utils.m */,
 				99C8F94E192B4337007EFFC1 /* UIViewController+Utils.h */,
 				99C8F94F192B4337007EFFC1 /* UIViewController+Utils.m */,
-				7F6D0C4A1B704E7D00A15571 /* UIImageView+Utils.h */,
-				7F6D0C4B1B704E7D00A15571 /* UIImageView+Utils.m */,
 				7F6D0CF31B731DAC00A15571 /* NSDate+Utils.h */,
 				7F6D0CF41B731DAC00A15571 /* NSDate+Utils.m */,
 				7F0D50161B8D8A8B0017359F /* NSString+UVUtils.h */,
@@ -698,7 +693,6 @@
 				7F7C43D21BA186F900E54B4B /* NSMutableArray+UVUtils.m in Sources */,
 				99C8F955192B4337007EFFC1 /* UITableView+Utils.m in Sources */,
 				99C8F950192B4337007EFFC1 /* NSObject+UVObjects.m in Sources */,
-				7F6D0C4C1B704E7D00A15571 /* UIImageView+Utils.m in Sources */,
 				99C8F953192B4337007EFFC1 /* UIImage+Utils.m in Sources */,
 				7F823AB51B9FC8C800B1F68D /* MBProgressHUD.m in Sources */,
 				7F0D501B1B8DA94A0017359F /* UVValidate.m in Sources */,

@@ -11,5 +11,5 @@
 @interface NSMutableArray (UVUtils)
 
 //随机排序一个数组
-- (void)randromSort;
+- (void)uv_randromSort;
 @end

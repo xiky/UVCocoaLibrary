@@ -262,7 +262,7 @@
         [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
 
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if(![f fileExistsAtPath:full])
     {
@@ -300,7 +300,7 @@
         [f createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
     
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if(![f fileExistsAtPath:full])
     {
@@ -314,7 +314,7 @@
     NSArray *paths =  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true);
     NSString *path = paths[0];
     path = [path stringByAppendingPathComponent:@"images"];
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     
     NSFileManager *f = [NSFileManager defaultManager];

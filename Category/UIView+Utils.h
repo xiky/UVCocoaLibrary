@@ -22,7 +22,7 @@
  * @param BLOCK 视图点击后执行的代码
  * @return UITapGestureRecognizer
  */
-- (UITapGestureRecognizer*)addClickWithBlock:(void (^)(void))block;
+- (UITapGestureRecognizer*)uv_addClickWithBlock:(void (^)(void))block;
 
 /**
  * 向视图添加点击事件
@@ -33,7 +33,7 @@
  * @param SEL 视图点击后执行的代码
  * @return UITapGestureRecognizer
  */
-- (UITapGestureRecognizer*)addClickWithSel:(id)target_ sel:(SEL)sel_;
+- (UITapGestureRecognizer*)uv_addClickWithSel:(id)target_ sel:(SEL)sel_;
 
 /**
  * 移除添加的点击事件

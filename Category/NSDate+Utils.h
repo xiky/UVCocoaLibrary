@@ -10,7 +10,7 @@
 
 @interface NSDate (Utils)
 
-- (NSString*)stringBYFmt:(NSString*)fmt_;
+- (NSString*)uv_stringByFmt:(NSString*)fmt_;
 /**
  *  <#Description#>
  *
@@ -19,5 +19,5 @@
  *
  *  @return <#return value description#>
  */
-- (NSString*)stringBYFmt:(NSString *)fmt_ timeZone:(NSString*)time_;
+- (NSString*)uv_stringByFmt:(NSString *)fmt_ timeZone:(NSString*)time_;
 @end

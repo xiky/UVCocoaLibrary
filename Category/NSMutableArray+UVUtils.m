@@ -10,7 +10,7 @@
 
 @implementation NSMutableArray (UVUtils)
 
-- (void)randromSort
+- (void)uv_randromSort
 {
     int count = (int)[self count];
     for (int i = 0; i < count; ++i)

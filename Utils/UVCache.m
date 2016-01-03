@@ -47,7 +47,7 @@
         }
     }
     
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if([m fileExistsAtPath:full])
     {
@@ -99,7 +99,7 @@
     NSString *path = UV_PATH_CACHE_WITH_NAME(_folder);
     
     NSFileManager *m = [NSFileManager defaultManager];
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     return [m fileExistsAtPath:full];
 }
@@ -109,7 +109,7 @@
     NSString *path = UV_PATH_CACHE_WITH_NAME(_folder);
     
     NSFileManager *m = [NSFileManager defaultManager];
-    NSString *filename = [url_ md5passwd];
+    NSString *filename = [url_ uv_md5passwd];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if([m fileExistsAtPath:full])
     {

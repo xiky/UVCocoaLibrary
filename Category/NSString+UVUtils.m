@@ -13,14 +13,14 @@
 
 @implementation NSString (UVUtils)
 
-- (BOOL)matchByRegpx:(NSString*)reg_
+- (BOOL)uv_matchByRegpx:(NSString*)reg_
 {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg_];
     BOOL isMatch = [pred evaluateWithObject:self];
     return isMatch;
 }
 
-- (NSString *)md5passwd
+- (NSString *)uv_md5passwd
 {
 
     const char *cpass = [self UTF8String];
@@ -35,7 +35,7 @@
             ];
 }
 
-- (NSString*)sha256passwd
+- (NSString*)uv_sha256passwd
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
@@ -53,7 +53,7 @@
     return output;
 }
 
-- (CGSize)sizeByFont:(UIFont*)font_ maxSize:(CGSize)size_
+- (CGSize)uv_sizeByFont:(UIFont*)font_ maxSize:(CGSize)size_
 {
     NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font_,NSFontAttributeName,nil];
     // ios 7

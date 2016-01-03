@@ -23,14 +23,14 @@ static char kActionHandlerTapBlockKey;
     }
 }
 
-- (UITapGestureRecognizer*)addClickWithBlock:(void (^)(void))block
+- (UITapGestureRecognizer*)uv_addClickWithBlock:(void (^)(void))block
 {
     self.userInteractionEnabled = YES;
 	UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kActionHandlerTapGestureKey);
 	
 	if (!gesture)
     {
-		gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleActionForTapGesture:)];
+		gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(uv_handleActionForTapGesture:)];
 		[self addGestureRecognizer:gesture];
 		objc_setAssociatedObject(self, &kActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
 	}
@@ -39,7 +39,7 @@ static char kActionHandlerTapBlockKey;
     return gesture;
 }
 
-- (UITapGestureRecognizer*)addClickWithSel:(id)target_ sel:(SEL)sel_
+- (UITapGestureRecognizer*)uv_addClickWithSel:(id)target_ sel:(SEL)sel_
 {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:target_ action:sel_];
@@ -62,7 +62,7 @@ static char kActionHandlerTapBlockKey;
         objc_setAssociatedObject(self, &kActionHandlerTapBlockKey, NULL, OBJC_ASSOCIATION_COPY);
     }
 }
-- (void)handleActionForTapGesture:(UITapGestureRecognizer *)gesture
+- (void)uv_handleActionForTapGesture:(UITapGestureRecognizer *)gesture
 {
 	if (gesture.state == UIGestureRecognizerStateRecognized)
     {
@@ -103,7 +103,7 @@ static char kActionHandlerTapBlockKey;
     return nil;
 }
 
-- (void)removeBadgeValue
+- (void)uv_removeBadgeValue
 {
     //
     for (UIView *subview in self.subviews) {

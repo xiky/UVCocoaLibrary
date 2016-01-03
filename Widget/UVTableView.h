@@ -8,12 +8,29 @@
 
 #import <UIKit/UIKit.h>
 @class UVTableView;
-
+/**
+ *  UItablewView当前状态
+ */
 typedef NS_ENUM(NSInteger, UV_TABLEVIEW_STATUS) {
+    /**
+     *  空闲
+     */
     UV_TABLEVIEW_STATUS_IDLE,
+    /**
+     *  加载中
+     */
     UV_TABLEVIEW_STATUS_LOADING,
+    /**
+     *  加载完成，数据为空
+     */
     UV_TABLEVIEW_STATUS_EMPTY,
+    /**
+     *  加载出错
+     */
     UV_TABLEVIEW_STATUS_FAILURED,
+    /**
+     *  加载完成，且有数据
+     */
     UV_TABLEVIEW_STATUS_FINISH
 };
 
@@ -25,7 +42,9 @@ typedef NS_ENUM(NSInteger, UV_TABLEVIEW_STATUS) {
  */
 typedef void (^statusViewClickListener)(UVTableView *tableView, UV_TABLEVIEW_STATUS status);
 
-
+/**
+ *  自定义一个uitablewview，增加一个居中视图。视图中放置一个UIImageView,两个UILable。主要用于uitableview状态显示
+ */
 @interface UVTableView : UITableView
 /**
  *  图片
