@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (shadow)
+@interface UITextField (UVUtils)
 
 - (void)uv_addCursorBorder:(UIColor*)color;
 

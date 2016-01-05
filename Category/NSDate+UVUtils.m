@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 Uniview. All rights reserved.
 //
 
-#import "NSDate+Utils.h"
+#import "NSDate+UVUtils.h"
 
-@implementation NSDate (Utils)
+@implementation NSDate (UVUtils)
 
 - (NSString*)uv_stringByFmt:(NSString*)fmt_
 {

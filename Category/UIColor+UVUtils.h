@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Utils)
+@interface UIColor (UVUtils)
 
 /**
  * 使用十六进制颜色创建uicolor 

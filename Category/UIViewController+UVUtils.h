@@ -1,5 +1,5 @@
 //
-//  UIViewController+Utils.h
+//  UIViewController+UVUtils.h
 //  UVCocoaLibrary
 //
 //  Created by chenjiaxin on 10/18/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (Utils)
+@interface UIViewController (UVUtils)
 
 /**
  * 在视图上增加事件 点击视图自动隐藏键盘

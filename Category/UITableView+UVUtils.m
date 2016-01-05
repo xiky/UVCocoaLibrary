@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 XXXX.com. All rights reserved.
 //
 
-#import "UITableView+Utils.h"
+#import "UITableView+UVUtils.h"
 
-@implementation UITableView (Utils)
+@implementation UITableView (UVUtils)
 - (void)uv_setExtraCellLineHidden
 {
     UIView *view =[[UIView alloc]init];

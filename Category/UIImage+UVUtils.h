@@ -1,5 +1,5 @@
 //
-//  UIImage+Utils.h
+//  UIImage+UVUtils.h
 //  br_AirimosPhone_report
 //
 //  Created by chenjiaxin on 10/11/13.
@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 @class UVError;
 
-@interface UIImage (Utils)
+@interface UIImage (UVUtils)
 
 /**
  * 使用颜色创建一个新的图像

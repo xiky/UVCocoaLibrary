@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 XXXX.com. All rights reserved.
 //
 
-#import "UIColor+Utils.h"
+#import "UIColor+UVUtils.h"
 
-@implementation UIColor (Utils)
+@implementation UIColor (UVUtils)
 
 + (UIColor *) uv_colorFromHexRGB:(NSString *) inColorString
 {

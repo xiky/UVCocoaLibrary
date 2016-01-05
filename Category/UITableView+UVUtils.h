@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableView (Utils)
+@interface UITableView (UVUtils)
 
 /**
  * 设置表格视图下面多余的cell隐藏

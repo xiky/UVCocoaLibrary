@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 XXXX. All rights reserved.
 //
 
-#import "UIImage+Utils.h"
+#import "UIImage+UVUtils.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "UVError.h"
 #import "UVHttpClient.h"
 #import "UVUtils.h"
 #import "NSString+UVUtils.h"
-@implementation UIImage (Utils)
+@implementation UIImage (UVUtils)
 
 /**
  * 在图片中写入文字

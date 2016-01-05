@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (Utils)
+@interface NSDate (UVUtils)
 
 - (NSString*)uv_stringByFmt:(NSString*)fmt_;
 /**

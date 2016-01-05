@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 XXXX. All rights reserved.
 //
 
-#import "UITextField+shadow.h"
+#import "UITextField+UVUtils.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation UITextField (shadow)
+@implementation UITextField (UVUtils)
 
 - (void)uv_addCursorBorder:(UIColor*)color
 {

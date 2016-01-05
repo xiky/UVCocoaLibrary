@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 XXXX. All rights reserved.
 //
 
-#import "UIView+Utils.h"
+#import "UIView+UVUtils.h"
 #import <objc/runtime.h>
 #import <QuartzCore/QuartzCore.h>
 
 static char kActionHandlerTapGestureKey;
 static char kActionHandlerTapBlockKey;
 
-@implementation UIView (Utils)
+@implementation UIView (UVUtils)
 
 -(void)uv_removeAllSubView
 {

@@ -1,5 +1,5 @@
 //
-//  UIView+Utils.h
+//  UIView+UVUtils.h
 //  UVCocoaLibrary
 //
 //  Created by chenjiaxin on 9/29/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Utils)
+@interface UIView (UVUtils)
 
 /**
  * 删除所有子视图

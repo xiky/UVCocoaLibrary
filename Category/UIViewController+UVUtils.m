@@ -5,9 +5,9 @@
 //  Created by chenjiaxin on 10/18/13.
 //  Copyright (c) 2013 XXXX.com. All rights reserved.
 //
-#import "UIViewController+Utils.h"
+#import "UIViewController+UVUtils.h"
 
-@implementation UIViewController (Utils)
+@implementation UIViewController (UVUtils)
 
 
 ///**

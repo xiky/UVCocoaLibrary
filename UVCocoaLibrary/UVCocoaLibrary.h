@@ -35,7 +35,7 @@
 //#import "NSObject+UVObjects.h"
 //#import "UIColor+Utils.h"
 //#import "UIDevice+Resolutions.h"
-//#import "UIImage+Utils.h"
+//#import "UIImage+UVUtils.h"
 //#import "UIPickerView+Utils.h"
 //#import "UITableView+Utils.h"
 //#import "UITextField+shadow.h"
