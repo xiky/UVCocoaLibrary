@@ -8,6 +8,8 @@
 
 #import "UVDevice.h"
 #import "UVConest.h"
+#import "UVHttpClient.h"
+#import "UVRequest.h"
 #include <netdb.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
@@ -98,6 +100,32 @@
  
     return info[@"CFBundleShortVersionString"];
     //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
+}
+- (void)getAppStoreVersion:(NSString *)appId complete:(void (^)(BOOL))complete
+{
+    UVHttpClient *client = [UVHttpClient instance];
+    UVRequest *request = [[UVRequest alloc] init];
+    
+    NSString *path = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@", appId];
+    NSURL *url = [NSURL URLWithString:path];
+    
+    __block NSData *data = nil;
+    [request exec:^{
+        data = [client post:url param:nil error:nil];
+    } finish:^(UVError *error) {
+        if (data) {
+            NSDictionary *receiveDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//            NSLog(@"receiveDic: %@", receiveDic);
+            if ([[receiveDic valueForKey:@"resultCount"] intValue]>0) {
+                NSString *appStore = [[[receiveDic valueForKey:@"results"] objectAtIndex:0] valueForKey:@"version"];
+                if ([appStore isEqualToString:[self appVersionName]]) {
+                    complete(NO);
+                } else {
+                    complete(YES);
+                }
+            }
+        }
+    }];
 }
 - (NSString*)appVersionCode
 {

@@ -19,6 +19,14 @@
  */
 - (NSString*)appVersionName;
 /**
+ *  获取App Store
+ *
+ *  @param appId AppId
+ *
+ *  @return 布尔值
+ */
+- (void)getAppStoreVersion:(NSString *)appId complete:(void (^)(BOOL))complete;
+/**
  *  当前APP的内部版本号
  *
  *  @return NSString
