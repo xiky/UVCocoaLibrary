@@ -87,33 +87,54 @@ typedef void (^finishDownListener)(NSError *error);
 - (id)initWithDelegate:(id<UVHttpClientDelegate>)delegate_;
 
 /**
- 发送get请求
+ *  发送get请求 注意： error_必须要指定 使用方式：
+    NSError *error;
+    [client get:[NSURL URLWithString:@"http://www.baidu.com"] error:&error];
+ *
+ *  @param url_   NSURL
+ *  @param error_ NSError地址 出错后保留的错误信息，此参数为地址，必须指定，否则会崩溃
+ *
+ *  @return id 结果数据 具体内容由 RESPONSE_TYPE 指定
  */
 - (id)get:(NSURL*)url_ error:(NSError **)error_;
 
-/** 发送post请求
- 
- @param NSURL url_ 请求的url
- @param NSArray  params 请求的参数 格式如:
-    NSArray *param = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:@"值1"},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:@"值2"}];
-    注意值只能是字符型 如果是数字也用字符表示
- @param NSError error_ 如果产生错误这里保存错误信息
+/**
+ *  发送post请求 使用方式：
+    NSError *error;
+    [client post:[NSURL URLWithString:@"http://www.baidu.com"] param:@[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:@"值1"}] error:&error];
+ *  @param url_   NSUrl 请求的url
+ *  @param params NSArray 请求的参数 格式如:
+ NSArray *param = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:@"值1"},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:@"值2"}];
+ 注意值只能是字符型 如果是数字也用字符表示
+ *  @param error_ NSError地址 出错后保留的错误信息，此参数为地址，必须指定，否则会崩溃
+ *
+ *  @return 结果数据  具体内容由 RESPONSE_TYPE 指定
  */
 - (id)post:(NSURL*)url_ param:(NSArray*)params error:(NSError **)error_;
 
 /**
- 注：post表单必须设置contentType为： application/x-www-form-urlencoded
+ *  直接使用POST方式发送指定的NSData数据
+ *  注：如果要POST表单数据，必须设置contentType为： application/x-www-form-urlencoded，否则服务器可能无法正常解析数据
+ *
+ *  @param url_   NSURL 请求的url
+ *  @param data_  NSData 要发送的NSData数据
+ *  @param error_ NSError地址 出错后保留的错误信息，此参数为地址，必须指定，否则会崩溃
+ *
+ *  @return 结果数据  具体内容由 RESPONSE_TYPE 指定
  */
 - (id)postData:(NSURL*)url_ data:(NSData*)data_ error:(NSError **)error_;
 
-/** 上传文件
- 可以上传多个文件
- 
- @param NSURL url_ 请求的地址
- @param NSArray files 格式如 
-    NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<文件NSData>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"},{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<文件NSData>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"}];
- @param NSArray params 其它参数
- @param NSError error_ 如果产生错误 这里保存错误信息
+/**
+ *  上传文件
+ *
+ *  @param url_   NSURL 上传文件地址
+ *  @param files_ 要上传的文件数组，数据格式：
+   NSArray *file = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<文件NSData>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"},{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:<文件NSData>,UV_REQUEST_UPLOAD_FILENAME:@"1.jpg",UV_REQUEST_UPLOAD_MIMETYPE:@"image/png"}];
+ *  @param params 附加字段 格式如：
+  NSArray *param = @[{REQUEST_FIELD_NAME:@"键名1",REQUEST_FIELD_VALUE:@"值1"},{REQUEST_FIELD_NAME:@"键名2",REQUEST_FIELD_VALUE:@"值2"}];
+ *  @param error_ NSError NSError地址 出错后保留的错误信息，此参数为地址，必须指定，否则会崩溃
+ *
+ *  @return 结果数据  具体内容由 RESPONSE_TYPE 指定
  */
 - (id)upload:(NSURL*)url_ files:(NSArray*)files_ param:(NSArray*)params error:(NSError **)error_;
 
@@ -123,7 +144,7 @@ typedef void (^finishDownListener)(NSError *error);
  
  @param NSURL url_ 远程地址
  @param NSURL 本地保存的地址
- @param block 下载完成后回调 如果error不为空，表示出现了错误
+ @param block 下载完成后回调 如果error不为nil，表示出现了错误
  */
 - (void)download:(NSURL*)url_ save:(NSString*)file_ finish:(finishDownListener)finish_;
 - (void)cancelDownload;

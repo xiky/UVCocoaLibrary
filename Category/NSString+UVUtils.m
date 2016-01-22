@@ -22,7 +22,6 @@
 
 - (NSString *)uv_md5passwd
 {
-
     const char *cpass = [self UTF8String];
     unsigned char result[32];
     CC_MD5(cpass, (uint)strlen(cpass), result);
@@ -48,8 +47,7 @@
     {
         [output appendFormat:@"%02x", digest[i]];
     }
-    
-    
+
     return output;
 }
 

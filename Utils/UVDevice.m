@@ -111,7 +111,8 @@
     
     __block NSData *data = nil;
     [request exec:^{
-        data = [client post:url param:nil error:nil];
+        NSError *error = nil;
+        data = [client post:url param:nil error:&error];
     } finish:^(UVError *error) {
         if (data) {
             NSDictionary *receiveDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
