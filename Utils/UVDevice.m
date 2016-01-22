@@ -119,15 +119,32 @@
 //            NSLog(@"receiveDic: %@", receiveDic);
             if ([[receiveDic valueForKey:@"resultCount"] intValue]>0) {
                 NSString *appStore = [[[receiveDic valueForKey:@"results"] objectAtIndex:0] valueForKey:@"version"];
-                if ([appStore isEqualToString:[self appVersionName]]) {
-                    complete(NO);
-                } else {
-                    complete(YES);
-                }
+                complete([self compareVersion:appStore]);
             }
         }
     }];
 }
+
+- (BOOL)compareVersion:(NSString *)storeVersion {
+    
+    NSArray *storeVersionNumbers = [storeVersion componentsSeparatedByString:@"."];
+    NSArray *localVersionNumbers = [[self appVersionName] componentsSeparatedByString:@"."];
+    
+    if (storeVersionNumbers.count != localVersionNumbers.count) {
+        return NO;
+    }
+    
+    for (int i = 0; i < storeVersionNumbers.count; i++) {
+        NSInteger store = [[storeVersionNumbers objectAtIndex:i] integerValue];
+        NSInteger local = [[localVersionNumbers objectAtIndex:i] integerValue];
+        if (store > local) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (NSString*)appVersionCode
 {
     NSDictionary *info = [NSBundle mainBundle].infoDictionary;
