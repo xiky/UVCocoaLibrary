@@ -58,4 +58,12 @@
     CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
     return sizeText;
 }
+
+- (CGSize)uv_sizeByFontHeight:(UIFont*)font_ maxSize:(CGSize)size_
+{
+    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font_,NSFontAttributeName,nil];
+    // ios 7
+    CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
+    return sizeText;
+}
 @end

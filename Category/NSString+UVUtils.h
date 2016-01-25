@@ -34,5 +34,5 @@
  */
 - (CGSize)uv_sizeByFont:(UIFont*)font_ maxSize:(CGSize)size_;
 
-
+- (CGSize)uv_sizeByFontHeight:(UIFont*)font_ maxSize:(CGSize)size_;
 @end
