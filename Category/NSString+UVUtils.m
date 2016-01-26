@@ -63,7 +63,7 @@
 {
     NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font_,NSFontAttributeName,nil];
     // ios 7
-    CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
+    CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
     return sizeText;
 }
 @end
