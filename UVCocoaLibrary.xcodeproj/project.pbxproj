@@ -24,8 +24,6 @@
 		7F823AB41B9FC8C800B1F68D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7F823A9B1B9FC8C800B1F68D /* README.md */; };
 		7F823AB51B9FC8C800B1F68D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AA31B9FC8C800B1F68D /* MBProgressHUD.m */; };
 		7F823AB61B9FC8C800B1F68D /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AA51B9FC8C800B1F68D /* UIView+Toast.m */; };
-		7F823AB71B9FC8C800B1F68D /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AA81B9FC8C800B1F68D /* WYPopoverController.m */; };
-		7F823AB81B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AAA1B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m */; };
 		7F823AB91B9FC8C800B1F68D /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F823AAD1B9FC8C800B1F68D /* XMLReader.m */; };
 		7FCB28F91BF2105000F4C291 /* UVFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB28F81BF2105000F4C291 /* UVFileManage.m */; };
 		7FDDDDFC1C2ABCDB00294AD9 /* UVTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDDDFB1C2ABCDB00294AD9 /* UVTableView.m */; };
@@ -175,10 +173,6 @@
 		7F823AA31B9FC8C800B1F68D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		7F823AA41B9FC8C800B1F68D /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		7F823AA51B9FC8C800B1F68D /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		7F823AA71B9FC8C800B1F68D /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
-		7F823AA81B9FC8C800B1F68D /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
-		7F823AA91B9FC8C800B1F68D /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
-		7F823AAA1B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYStoryboardPopoverSegue.m; sourceTree = "<group>"; };
 		7F823AAC1B9FC8C800B1F68D /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		7F823AAD1B9FC8C800B1F68D /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		7FCB28F71BF2105000F4C291 /* UVFileManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVFileManage.h; sourceTree = "<group>"; };
@@ -298,7 +292,6 @@
 				7F823A9C1B9FC8C800B1F68D /* MBProgressHUD */,
 				7F823AA41B9FC8C800B1F68D /* UIView+Toast.h */,
 				7F823AA51B9FC8C800B1F68D /* UIView+Toast.m */,
-				7F823AA61B9FC8C800B1F68D /* WYPopoverController */,
 				7F823AAB1B9FC8C800B1F68D /* XMLReader */,
 			);
 			path = ThirdLibrary;
@@ -343,17 +336,6 @@
 				7F823AA31B9FC8C800B1F68D /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		7F823AA61B9FC8C800B1F68D /* WYPopoverController */ = {
-			isa = PBXGroup;
-			children = (
-				7F823AA71B9FC8C800B1F68D /* WYPopoverController.h */,
-				7F823AA81B9FC8C800B1F68D /* WYPopoverController.m */,
-				7F823AA91B9FC8C800B1F68D /* WYStoryboardPopoverSegue.h */,
-				7F823AAA1B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m */,
-			);
-			path = WYPopoverController;
 			sourceTree = "<group>";
 		};
 		7F823AAB1B9FC8C800B1F68D /* XMLReader */ = {
@@ -674,7 +656,6 @@
 				99B4001C193D9851002224A5 /* UVActivityIndicatorView.m in Sources */,
 				99C8F97C192B4667007EFFC1 /* UVTables.m in Sources */,
 				7FF529AD1C3900CC0087211B /* UVSafeData.m in Sources */,
-				7F823AB81B9FC8C800B1F68D /* WYStoryboardPopoverSegue.m in Sources */,
 				7F00E1221BE1F310006AFE9F /* UVModelView.m in Sources */,
 				99C8F957192B4337007EFFC1 /* UIView+Shake.m in Sources */,
 				814FD2D51B5739D600A96FDC /* UVLogger.m in Sources */,
@@ -699,7 +680,6 @@
 				7F823AAE1B9FC8C800B1F68D /* FMDatabase.m in Sources */,
 				7F6D0DFF1B7C9AA100A15571 /* UVCache.m in Sources */,
 				99C8F956192B4337007EFFC1 /* UITextField+UVUtils.m in Sources */,
-				7F823AB71B9FC8C800B1F68D /* WYPopoverController.m in Sources */,
 				7F1498691B95890C00950789 /* UIScrollView+UVUtils.m in Sources */,
 				99C8F97E192B4667007EFFC1 /* UVError.m in Sources */,
 				7F7C43D21BA186F900E54B4B /* NSMutableArray+UVUtils.m in Sources */,
