@@ -48,6 +48,8 @@
     }
     
     NSString *filename = [url_ uv_md5passwd];
+    NSURL *tmpUrl = [NSURL URLWithString:url_];
+    filename = [NSString stringWithFormat:@"%@.%@",filename, tmpUrl.pathExtension];
     NSString *full = [path stringByAppendingPathComponent:filename];
     if([m fileExistsAtPath:full])
     {
