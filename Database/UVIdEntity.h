@@ -16,8 +16,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UVSafeData.h"
 
 @interface UVIdEntity : NSObject
 @property(nonatomic,strong) NSNumber *id_;
 
+
+
+- (NSString*)getString:(id)obj_;
+- (NSNumber*)getNum:(id)obj_;
+- (NSArray*)getArr:(id)obj_;
+- (NSDictionary*)getDict:(id)obj_;
 @end
