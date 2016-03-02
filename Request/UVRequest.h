@@ -23,6 +23,14 @@ typedef void (^startProgress)(NSError *error);
     主要用于耗时的操作
  */
 @interface UVRequest : NSObject
+/**
+ *  设置错误友好处理 Exception类型
+ */
+@property (nonatomic) UVError *errorException;
+/**
+ *  设置错误友好处理 NSError类型
+ */
+@property (nonatomic) UVError *errorNSError;
 @property(nonatomic,readonly) dispatch_queue_t requestQueue;
 
 - (id)init;

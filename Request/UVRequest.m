@@ -31,6 +31,8 @@ static UVRequest *_requestinstance = nil;
 {
     //_requestQueue = dispatch_queue_create("_requestQueue", DISPATCH_QUEUE_SERIAL);
     _requestQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _errorException = [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:@"操作失败，请稍候重试"];
+    _errorNSError = [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:@"操作失败，请稍候再试"];
 }
 
 - (id)init
@@ -85,11 +87,11 @@ static UVRequest *_requestinstance = nil;
             err = exception;
         }
         @catch (NSException *exception) {
-            err = [UVError errorWithCodeAndMessage:UV_GENERAL_ERROR_CODE message:exception.reason];
+            err = _errorException;
             err.orginalException = exception;
         }
         @catch (NSError *error) {
-            err = [UVError errorWithCodeAndMessage:error.code message:error.localizedDescription];
+            err = _errorNSError;
             err.orginalError = error;
         }
         @finally {
