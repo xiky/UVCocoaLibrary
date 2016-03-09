@@ -12,12 +12,12 @@
 
 - (NSString*)uv_stringByFmt:(NSString*)fmt_;
 /**
- *  <#Description#>
+ *  格式化时间，返回字符串
  *
- *  @param fmt_  <#fmt_ description#>
- *  @param time_ 时区 如 Asia/Shanghai
+ *  @param fmt_  设置nil，默认为yyyy-MM-dd HH:mm:ss
+ *  @param time_ 时区  设置nil，默认为Asia/Shanghai
  *
- *  @return <#return value description#>
+ *  @return NSString
  */
 - (NSString*)uv_stringByFmt:(NSString *)fmt_ timeZone:(NSString*)time_;
 @end

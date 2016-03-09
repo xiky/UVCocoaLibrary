@@ -66,4 +66,20 @@
     CGSize sizeText = [self boundingRectWithSize:size_ options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
     return sizeText;
 }
+
+- (NSDate*)uv_dateByFmt:(NSString*)fmt_ timeZone:(NSString*)time_
+{
+    if(fmt_ == nil)
+    {
+        fmt_ = @"yyyy-MM-dd HH:mm:ss";
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:fmt_];
+    if(time_ != nil)
+    {
+        NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:time_];
+        [formatter setTimeZone:timeZone];
+    }
+    return [formatter dateFromString:self];
+}
 @end
