@@ -80,7 +80,6 @@ static UVURLConnectionDataDelegate *_instance = nil;
         BOOL dirc = NO;
         if([fp fileExistsAtPath:path_ isDirectory:&dirc])
         {
-            NSLog(@"fileExistsAtPath:%@,del it",path_);
             [fp removeItemAtPath:path_ error:&error];
             
             if(error != nil)
@@ -95,25 +94,28 @@ static UVURLConnectionDataDelegate *_instance = nil;
         NSString *tmpPath = [path_ stringByAppendingString:@".downloading"];
         if([fp fileExistsAtPath:tmpPath isDirectory:&dirc])
         {
-            [fp removeItemAtPath:tmpPath error:&error];
-            if(error != nil)
+            //加载缓存文件
+            NSError *error;
+            NSDictionary *attr = [fp attributesOfItemAtPath:tmpPath error:&error];
+            NSNumber  *size = attr[NSFileSize];
+            [client_ addValue:[NSString stringWithFormat:@"bytes=%ld-",(long)size.integerValue] forHTTPHeaderField:@"RANGE"];
+        }
+        //重新创建一个文件
+        else
+        {
+            BOOL result = [fp createFileAtPath:tmpPath contents:nil attributes:nil];
+            if(!result)
             {
-                NSLog(@"initWithDownClient error:%@,path:%@",error,tmpPath);
+                NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
+                error = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
                 [self triggerError:error finish:finish_];
                 return nil;
             }
         }
-        
-        BOOL result = [fp createFileAtPath:tmpPath contents:nil attributes:nil];
-        if(!result)
-        {
-            NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
-            error = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
-            [self triggerError:error finish:finish_];
-            return nil;
-        }
 
         _file = [NSFileHandle fileHandleForUpdatingAtPath:tmpPath];
+        NSInteger pos = [_file seekToEndOfFile];
+        
         if(_file == nil)
         {
             NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
