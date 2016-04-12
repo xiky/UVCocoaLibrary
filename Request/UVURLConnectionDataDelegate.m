@@ -23,6 +23,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
 {
     NSFileHandle *_file;
 }
+@property (nonatomic,strong) NSString *tmpDownFilePath;
 @end;
 @implementation UVURLConnectionDataDelegate
 {
@@ -81,9 +82,29 @@ static UVURLConnectionDataDelegate *_instance = nil;
         {
             NSLog(@"fileExistsAtPath:%@,del it",path_);
             [fp removeItemAtPath:path_ error:&error];
-            error = nil;
+            
+            if(error != nil)
+            {
+                NSLog(@"initWithDownClient error:%@,path:%@",error,path_);
+                [self triggerError:error finish:finish_];
+                return nil;
+            }
         }
-        BOOL result = [fp createFileAtPath:path_ contents:nil attributes:nil];
+        
+        //创建一个临时文件下载
+        NSString *tmpPath = [path_ stringByAppendingString:@".downloading"];
+        if([fp fileExistsAtPath:tmpPath isDirectory:&dirc])
+        {
+            [fp removeItemAtPath:tmpPath error:&error];
+            if(error != nil)
+            {
+                NSLog(@"initWithDownClient error:%@,path:%@",error,tmpPath);
+                [self triggerError:error finish:finish_];
+                return nil;
+            }
+        }
+        
+        BOOL result = [fp createFileAtPath:tmpPath contents:nil attributes:nil];
         if(!result)
         {
             NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
@@ -91,13 +112,16 @@ static UVURLConnectionDataDelegate *_instance = nil;
             [self triggerError:error finish:finish_];
             return nil;
         }
-        _file = [NSFileHandle fileHandleForUpdatingAtPath:path_];
-        if(error != nil)
+
+        _file = [NSFileHandle fileHandleForUpdatingAtPath:tmpPath];
+        if(_file == nil)
         {
-            NSLog(@"initWithDownClient error:%@,path:%@",error,path_);
+            NSDictionary *info = @{NSLocalizedDescriptionKey:@"创建文件失败，请确认文件是否已经存在"};
+            error = [NSError errorWithDomain:@"UVHttpClient" code:UV_GENERAL_ERROR_CODE userInfo:info];
             [self triggerError:error finish:finish_];
             return nil;
         }
+        
         _downFilePath = path_;
         _finishDownBlock = finish_;
     }
@@ -110,7 +134,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
 #pragma  mark - delegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse*)response
 {
-    if(!_file)
+    if(_file == nil)
     {
         _data = [[NSMutableData alloc] init];
     }
@@ -127,6 +151,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     _error = nil;
+
     [self triggerStatus:REQUEST_FINISHED];
 }
 
@@ -180,7 +205,7 @@ static UVURLConnectionDataDelegate *_instance = nil;
 //处理数据
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    if(_file)
+    if(_file != nil)
     {
         [_file writeData:data];
     }
@@ -198,10 +223,22 @@ static UVURLConnectionDataDelegate *_instance = nil;
     _status = status_;
     if([self isFinished])
     {
-        if(_file)
+        if(_file != nil)
         {
             [_file closeFile];
             _file = nil;
+            
+            //下载完成，从临时文件还原到下载的路径
+//            NSString *tmpPath = [_downFilePath stringByAppendingString:@".downloading"];
+            NSString *tmpPath = [_downFilePath stringByAppendingString:@".downloading"];
+            NSError *error = nil;
+            NSFileManager *fp = [NSFileManager defaultManager];
+            [fp moveItemAtPath:tmpPath toPath:_downFilePath error:&error];
+            
+            if(error != nil)
+            {
+                _error = [UVError errorWithNSError:error];
+            }
         }
     }
     if(_status == REQUEST_FINISHED || _status == REQUEST_CANCEL || _status == REQUEST_ERROR)
