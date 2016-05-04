@@ -34,7 +34,7 @@ static const CGSize  CSToastShadowOffset        = { 0.0, 0.0 };
 static const BOOL    CSToastDisplayShadow       = YES;
 
 // display duration
-static const NSTimeInterval CSToastDefaultDuration  = 3.0;
+static const NSTimeInterval CSToastDefaultDuration  = 2.0;
 
 // image view size
 static const CGFloat CSToastImageViewWidth      = 80.0;
@@ -122,9 +122,6 @@ NSString * const CSToastPositionBottom          = @"bottom";
         toast.exclusiveTouch = YES;
     }
     
-    //    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
-    //    visualEffectView.frame = toast.frame;
-    //    [self addSubview:visualEffectView];
     [self addSubview:toast];
     
     [UIView animateWithDuration:CSToastFadeDuration
@@ -366,6 +363,11 @@ NSString * const CSToastPositionBottom          = @"bottom";
     CGFloat wrapperHeight = MAX((messageTop + messageHeight + CSToastVerticalPadding), (imageHeight + (CSToastVerticalPadding * 2)));
     
     wrapperView.frame = CGRectMake(0.0, 0.0, wrapperWidth, wrapperHeight);
+    
+//    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+//    visualEffectView.bounds = wrapperView.bounds;
+//    visualEffectView.center = wrapperView.center;
+//    [wrapperView addSubview:visualEffectView];
     
     if(titleLabel != nil) {
         titleLabel.frame = CGRectMake(titleLeft, titleTop, titleWidth, titleHeight);
