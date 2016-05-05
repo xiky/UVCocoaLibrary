@@ -21,7 +21,7 @@ static const CGFloat CSToastMaxHeight           = 0.8;      // 80% of parent vie
 static const CGFloat CSToastHorizontalPadding   = 10.0;
 static const CGFloat CSToastVerticalPadding     = 8.0;
 static const CGFloat CSToastCornerRadius        = 6.0;
-static const CGFloat CSToastOpacity             = 1;
+static const CGFloat CSToastOpacity             = 0.5;
 static const CGFloat CSToastFontSize            = 16.0;
 static const CGFloat CSToastMaxTitleLines       = 0;
 static const CGFloat CSToastMaxMessageLines     = 0;
@@ -128,7 +128,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
                           delay:0.5
                         options:(UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAllowUserInteraction)
                      animations:^{
-                         toast.alpha = 0.5;
+//                         toast.alpha = 0.5;
                      } completion:^(BOOL finished) {
                          NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(toastTimerDidFinish:) userInfo:toast repeats:NO];
                          // associate the timer with the toast view
